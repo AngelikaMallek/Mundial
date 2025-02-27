@@ -1,0 +1,146 @@
+[
+      {
+        "id": 4,
+        "grupa": "A",
+        "punkty": 1,
+        "druzyna": "Arabia S"
+      },
+      {
+        "id": 7,
+        "grupa": "B",
+        "punkty": 8,
+        "druzyna": "Anglia"
+      },
+      {
+        "id": 10,
+        "grupa": "C",
+        "punkty": 2,
+        "druzyna": "Walia"
+      },
+      {
+        "id": 11,
+        "grupa": "C",
+        "punkty": 3,
+        "druzyna": "Dania"
+      },
+      {
+        "id": 12,
+        "grupa": "C",
+        "punkty": 0,
+        "druzyna": "Tunezja"
+      },
+      {
+        "id": 13,
+        "grupa": "D",
+        "punkty": 4,
+        "druzyna": "Francja"
+      },
+      {
+        "id": 14,
+        "grupa": "D",
+        "punkty": 2,
+        "druzyna": "Australia"
+      },
+      {
+        "id": 15,
+        "grupa": "D",
+        "punkty": 3,
+        "druzyna": "Maroko"
+      },
+      {
+        "id": 16,
+        "grupa": "D",
+        "punkty": 0,
+        "druzyna": "Niemcy"
+      },
+      {
+        "id": 17,
+        "grupa": "E",
+        "punkty": 2,
+        "druzyna": "Chile"
+      },
+      {
+        "id": 18,
+        "grupa": "E",
+        "punkty": 8,
+        "druzyna": "Białoruś"
+      },
+      {
+        "id": 19,
+        "grupa": "E",
+        "punkty": 9,
+        "druzyna": "Ukraina"
+      },
+      {
+        "id": 21,
+        "grupa": "F",
+        "punkty": 4,
+        "druzyna": "Belgia"
+      },
+      {
+        "id": 22,
+        "grupa": "F",
+        "punkty": 3,
+        "druzyna": "Norwegia"
+      },
+      {
+        "id": 23,
+        "grupa": "F",
+        "punkty": 6,
+        "druzyna": "Horwacja"
+      },
+      {
+        "id": 24,
+        "grupa": "A",
+        "punkty": 3,
+        "druzyna": "Afganistan"
+      },
+      {
+        "id": 25,
+        "grupa": "B",
+        "punkty": 10,
+        "druzyna": "Albania"
+      },
+      {
+        "id": 26,
+        "grupa": "B",
+        "punkty": 6,
+        "druzyna": "Algeria"
+      },
+      {
+        "id": 27,
+        "grupa": "C",
+        "punkty": 9,
+        "druzyna": "Australia"
+      },
+      {
+        "id": 28,
+        "grupa": "E",
+        "punkty": 7,
+        "druzyna": "Belize"
+      },
+      {
+        "id": 29,
+        "grupa": "F",
+        "punkty": 5,
+        "druzyna": "Benin"
+      },
+      {
+        "id": 35,
+        "grupa": "B",
+        "punkty": 2,
+        "druzyna": "Polska"
+      },
+      {
+        "id": 47,
+        "grupa": "A",
+        "punkty": 4,
+        "druzyna": "Kamerun"
+      },
+      {
+        "id": 48,
+        "grupa": "A",
+        "punkty": null,
+        "druzyna": "Bługaria"
+      }
+]
