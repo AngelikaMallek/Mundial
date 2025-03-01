@@ -1,4 +1,4 @@
-import { Table,TableTd, TableTr } from './styled';
+import { Table,TableTd, TableTr, TableCaption, TableTdRight } from './styled';
 import { useApi } from '../../API/useAPI';
 import { Container } from '../../common/Container';
 
@@ -10,13 +10,13 @@ const TeamsTable = () => {
             {teams ? (
                 [...new Set(teams.map(team => team.grupa))].map((uniqueGrupa, index) => (
                     <Table key={index}>
-                        <caption>{uniqueGrupa}</caption>
+                        <TableCaption>Grupa: {uniqueGrupa}</TableCaption>
                         {teams
                             .filter(team => team.grupa === uniqueGrupa)
-                            .map((team, teamIndex) => (
+                            .map((team) => (
                                 <TableTr>
                                     <TableTd>{team.grupa === uniqueGrupa ? team.druzyna : null}</TableTd>
-                                    <TableTd>{team.grupa === uniqueGrupa ? team.punkty : null}</TableTd>
+                                    <TableTdRight>{team.grupa === uniqueGrupa ? team.punkty : null}</TableTdRight>
                                 </TableTr>
                             ))
                         }
