@@ -8,15 +8,15 @@ const TeamsTable = () => {
     return (
         <Container>
             {teams ? (
-                [...new Set(teams.map(team => team.grupa))].map((uniqueGrupa, index) => (
+                [...new Set(teams.map(team => team.team))].map((uniqueGrupa, index) => (
                     <Table key={index}>
                         <TableCaption>Grupa: {uniqueGrupa}</TableCaption>
                         {teams
-                            .filter(team => team.grupa === uniqueGrupa)
+                            .filter(team => team.team === uniqueGrupa)
                             .map((team) => (
                                 <TableTr>
-                                    <TableTd>{team.grupa === uniqueGrupa ? team.druzyna : null}</TableTd>
-                                    <TableTdRight>{team.grupa === uniqueGrupa ? team.punkty : null}</TableTdRight>
+                                    <TableTd>{team.team === uniqueGrupa ? team.country : null}</TableTd>
+                                    <TableTdRight>{team.team === uniqueGrupa ? team.points : null}</TableTdRight>
                                 </TableTr>
                             ))
                         }
