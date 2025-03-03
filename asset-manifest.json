@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/mundial/static/js/main.35340877.js",
+    "static/js/952.63f63170.chunk.js": "/mundial/static/js/952.63f63170.chunk.js",
+    "static/js/453.e7eff2d8.chunk.js": "/mundial/static/js/453.e7eff2d8.chunk.js",
+    "index.html": "/mundial/index.html",
+    "main.35340877.js.map": "/mundial/static/js/main.35340877.js.map",
+    "952.63f63170.chunk.js.map": "/mundial/static/js/952.63f63170.chunk.js.map",
+    "453.e7eff2d8.chunk.js.map": "/mundial/static/js/453.e7eff2d8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.35340877.js"
+  ]
+}
