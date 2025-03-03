@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: ${({theme}) => theme.color.whisper};
+        background-color: ${( { theme }) => theme.color.liteSeaGreen };
         font-family: 'Poppins', sans-serif;
         margin: 0;
         padding: 0;

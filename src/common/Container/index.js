@@ -9,5 +9,4 @@ export const Container = styled.div`
     flex-wrap: wrap;
     gap: 24px;
     justify-content: center;
-    background-color: ${( { theme }) => theme.color.liteSeaGreen };
 `;
