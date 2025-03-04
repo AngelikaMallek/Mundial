@@ -1,11 +1,16 @@
+import { Container } from "../Container";
 import { StyledNavigation, Links, LinkButton } from "./styled";
 
 const Navigation = () => (
-    <StyledNavigation>
-        <Links>
-            <LinkButton to="/teams">Teams</LinkButton>
-        </Links>
-    </StyledNavigation>
+    <Container>
+        <StyledNavigation>
+            <Links>
+                <LinkButton to="/teams">Teams</LinkButton>
+                <LinkButton to="/">Teams</LinkButton>
+                <LinkButton to="/">Teams</LinkButton>
+            </Links>
+        </StyledNavigation>
+    </Container>
 )
 
 export default Navigation;

@@ -4,7 +4,7 @@ export const Table = styled.table`
     padding: 15px;
     background-color: ${( { theme }) => theme.color.darkSeaGreen };
     border-radius: 0 0 10px 10px;
-    width: 50px;
+    width: 200px;
 `;
 
 export const TableTr = styled.tr`
@@ -17,6 +17,8 @@ export const TableTd = styled.td`
     border-color: ${( { theme }) => theme.color.black };
     color: ${( { theme }) => theme.color.black };
     padding: 5px;
+    text-align: center;
+    font-weight: 500;
 `;
 
 export const TableTdRight = styled.td`
@@ -25,11 +27,15 @@ export const TableTdRight = styled.td`
     border-color: ${( { theme }) => theme.color.black };
     color: ${( { theme }) => theme.color.black };
     padding: 5px;
+    text-align: center;
+    font-weight: 500;
 `;
 
 export const TableCaption = styled.caption`
     background-color: ${( { theme }) => theme.color.darkSeaGreen };
     color: ${( { theme }) => theme.color.black };
-    padding: 5px;
+    padding: 10px;
+    padding-bottom: 0;
     border-radius: 10px 10px 0 0;
+    font-weight: 500;
 `;
