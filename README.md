@@ -1,3 +1,22 @@
+# Mundial
+
+## Demo
+
+You can visit my website here: [Mundial](https://angelikamallek.github.io/Mundial/)
+
+## Description
+
+The project was created for the purpose of practicing API development.
+
+
+## Technologies
+- HTML
+- JavaScript
+- React.js
+- Styled Components
+- API
+- Supabase
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
