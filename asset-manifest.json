@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/Mundial/static/js/main.6e642ceb.js",
+    "main.js": "/Mundial/static/js/main.cac28df8.js",
     "static/js/952.63f63170.chunk.js": "/Mundial/static/js/952.63f63170.chunk.js",
     "static/js/453.e7eff2d8.chunk.js": "/Mundial/static/js/453.e7eff2d8.chunk.js",
     "index.html": "/Mundial/index.html",
-    "main.6e642ceb.js.map": "/Mundial/static/js/main.6e642ceb.js.map",
+    "main.cac28df8.js.map": "/Mundial/static/js/main.cac28df8.js.map",
     "952.63f63170.chunk.js.map": "/Mundial/static/js/952.63f63170.chunk.js.map",
     "453.e7eff2d8.chunk.js.map": "/Mundial/static/js/453.e7eff2d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.6e642ceb.js"
+    "static/js/main.cac28df8.js"
   ]
 }
