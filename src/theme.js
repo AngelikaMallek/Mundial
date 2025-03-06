@@ -10,7 +10,7 @@ export const theme = {
 		pattensBlue: "#D6E4FF",
 		stormGray: "#74788B",
 		scienceBlue: "#0044CC",
-		snuff: "#DDDDEE",
+		snuff: "#ebffeb",
 		darkSeaGreen: "#afcfaf",
 		liteSeaGreen: "#cfe2cf",
 	},

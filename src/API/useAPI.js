@@ -9,6 +9,7 @@ export const useApi = () => {
     const supabase = createClient(supabaseUrl, supabaseKey)
 
 	const [teams, setTeams] = useState(null);
+    const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
         const fetchTeams = async () => {
@@ -17,13 +18,16 @@ export const useApi = () => {
                 .from('teams')
                 .select('*')
                 setTeams(data);
+                setLoading(false);
             } catch {
                 console.log("Błąd połączenia z API")
+                setLoading(false);
             }
-    }
+        }
 
+        setLoading(true);
         setTimeout(fetchTeams, 2000);
     },[]);
 
-	return { teams };
+	return { teams, loading };
 };
