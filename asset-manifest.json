@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.js": "/Mundial/static/js/main.255c02a6.js",
+    "main.js": "/Mundial/static/js/main.fc5f11ad.js",
     "static/js/952.63f63170.chunk.js": "/Mundial/static/js/952.63f63170.chunk.js",
     "static/js/453.e7eff2d8.chunk.js": "/Mundial/static/js/453.e7eff2d8.chunk.js",
+    "static/media/logo.svg": "/Mundial/static/media/logo.a2797eba49a87275e62cfbc9ccc8b4db.svg",
     "index.html": "/Mundial/index.html",
-    "main.255c02a6.js.map": "/Mundial/static/js/main.255c02a6.js.map",
+    "main.fc5f11ad.js.map": "/Mundial/static/js/main.fc5f11ad.js.map",
     "952.63f63170.chunk.js.map": "/Mundial/static/js/952.63f63170.chunk.js.map",
     "453.e7eff2d8.chunk.js.map": "/Mundial/static/js/453.e7eff2d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.255c02a6.js"
+    "static/js/main.fc5f11ad.js"
   ]
 }
