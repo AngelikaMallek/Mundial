@@ -1,9 +1,13 @@
 import { Container } from "../Container";
-import { StyledNavigation, Links, LinkButton } from "./styled";
+import { StyledNavigation, Links, LinkButton, LogoStyle, TitleText, LogoWrapper } from "./styled";
 
 const Navigation = () => (
     <Container>
         <StyledNavigation>
+            <LogoWrapper>
+                <LogoStyle />
+                <TitleText to="/">Mundial</TitleText>
+            </LogoWrapper>
             <Links>
                 <LinkButton to="/teams">Teams</LinkButton>
                 <LinkButton to="/">Teams</LinkButton>

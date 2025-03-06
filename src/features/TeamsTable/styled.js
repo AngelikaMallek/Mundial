@@ -4,7 +4,7 @@ export const Table = styled.table`
     padding: 15px;
     background-color: ${( { theme }) => theme.color.darkSeaGreen };
     border-radius: 0 0 10px 10px;
-    width: 200px;
+    min-width: 200px;
 `;
 
 export const TableTr = styled.tr`
