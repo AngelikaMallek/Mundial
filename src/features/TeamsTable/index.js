@@ -2,12 +2,17 @@ import { Table,TableTd, TableTr, TableCaption, TableTdRight } from './styled';
 import { useApi } from '../../API/useAPI';
 import { Container } from '../../common/Container';
 import Loading from '../../common/Loading';
+import Error from '../../common/Error';
 
 const TeamsTable = () => {
-    const { teams, loading } = useApi();
+    const { teams, loading, error } = useApi();
 
     if(loading) {
         return <Loading />
+    }
+
+    if(error) {
+        return <Error />
     }
 
     return (
