@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Error from "../../common/Error";
 import { Container } from "../../common/Container";
-import { Title, Form, FormLabel, FormInput, FormButton, Wrapper, InputContainer } from './styled';
+import { Title, Form, FormLabel, FormInput, FormButton, Wrapper, InputContainer, FeetbackInform } from './styled';
 
 const AddedTeams = () => {
     const supabaseUrl = 'https://ewrwniaqrrxkcmizibyu.supabase.co';
@@ -13,6 +13,7 @@ const AddedTeams = () => {
     const [points, setPoints] = useState('');
     const [country, setCountry] = useState('');
     const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -34,6 +35,7 @@ const AddedTeams = () => {
                 setTeam('');
                 setPoints('');
                 setCountry('');
+                setSuccess(true);
             }
         };
 
@@ -47,7 +49,7 @@ const AddedTeams = () => {
                 <Title>Dodaj swoją drużynę</Title>
                 <Form onSubmit={handleSubmit}>
                     <InputContainer>
-                        <FormLabel htmlFor="team">Nazwa drużyny</FormLabel>
+                        <FormLabel htmlFor="team">Nazwa drużyny:</FormLabel>
                         <FormInput
                             type="text"
                             id="team"
@@ -57,7 +59,7 @@ const AddedTeams = () => {
                         />
                     </InputContainer>
                     <InputContainer>
-                        <FormLabel htmlFor="points">Punkty</FormLabel>
+                        <FormLabel htmlFor="points">Punkty:</FormLabel>
                         <FormInput
                             type="number"
                             id="points"
@@ -67,7 +69,7 @@ const AddedTeams = () => {
                         />
                     </InputContainer>
                     <InputContainer>
-                    <FormLabel htmlFor="country">Kraj</FormLabel>
+                    <FormLabel htmlFor="country">Kraj:</FormLabel>
                         <FormInput
                             type="text"
                             id="country"
@@ -78,6 +80,7 @@ const AddedTeams = () => {
                     </InputContainer>
                     <FormButton type="submit">Dodaj drużynę</FormButton>
                 </Form>
+                <FeetbackInform>{success ? "Gratulacje! Drużyna została dodana!": ""}</FeetbackInform>
             </Wrapper>
         </Container>
     );

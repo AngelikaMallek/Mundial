@@ -20,8 +20,10 @@ export const Form = styled.form`
 export const FormLabel = styled.label`
     color: ${({ theme}) => theme.color.darkSeaGreen};
     font-weight: 600;
+    width: 100%;
     display: flex;
-    
+    justify-content: flex-end;
+    padding: 1px 10px;
 `;
 
 export const FormInput = styled.input`
@@ -35,13 +37,23 @@ export const FormButton = styled.button`
     border: 2px solid ${({ theme}) => theme.color.darkSeaGreen};
     color: ${({ theme}) => theme.color.darkSeaGreen};
     padding: 5px;
-    margin: 10px;
+    margin: 10px 0;
     font-weight: 600;
     font-size: 20px;
+    cursor: pointer;
 `;
 
 export const InputContainer = styled.div`
     display: flex;
     justify-content: space-between;
 `;
+
+export const FeetbackInform = styled.p`
+    color: ${({ theme}) => theme.color.darkSeaGreen};
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1px 10px;
+`
 
