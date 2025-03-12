@@ -10,6 +10,11 @@ export const Title = styled.p`
     font-weight: 600;
     text-transform: uppercase;
     color: ${({ theme}) => theme.color.darkSeaGreen};
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-align: center; 
+        font-size: 20px;
+    }
 `;
 
 export const Form = styled.form`
@@ -24,6 +29,11 @@ export const FormLabel = styled.label`
     display: flex;
     justify-content: flex-end;
     padding: 1px 10px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        justify-content: center;
+        padding: 5px;
+    }
 `;
 
 export const FormInput = styled.input`
@@ -46,6 +56,10 @@ export const FormButton = styled.button`
 export const InputContainer = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        flex-direction: column;
+    }
 `;
 
 export const FeetbackInform = styled.p`
