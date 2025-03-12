@@ -35,6 +35,9 @@ export const LinkButton = styled(NavLink)`
     border: 2px solid ${( { theme }) => theme.color.darkSeaGreen};
     border-radius: 30px;
     padding: 10px 15px;
+    text-align: center;
+    display: flex;
+    align-self: center;
 
     &.active {
         border: 2px solid ${({ theme }) => theme.color.snuff};

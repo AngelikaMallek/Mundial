@@ -10,7 +10,7 @@ const Navigation = () => (
             </LogoWrapper>
             <Links>
                 <LinkButton to="/teams">Teams</LinkButton>
-                <LinkButton to="/">Teams</LinkButton>
+                <LinkButton to="/added">Added</LinkButton>
                 <LinkButton to="/">Teams</LinkButton>
             </Links>
         </StyledNavigation>
