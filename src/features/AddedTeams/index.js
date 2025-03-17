@@ -34,6 +34,7 @@ const AddedTeams = () => {
                             id="team"
                             value={team}
                             onChange={(e) => setTeam(e.target.value)}
+                            required
                         />
                     </InputContainer>
                     <InputContainer>
@@ -43,6 +44,7 @@ const AddedTeams = () => {
                             id="points"
                             value={points}
                             onChange={(e) => setPoints(e.target.value)}
+                            required
                         />
                     </InputContainer>
                     <InputContainer>
@@ -52,6 +54,7 @@ const AddedTeams = () => {
                             id="country"
                             value={country}
                             onChange={(e) => setCountry(e.target.value)}
+                            required
                         />
                     </InputContainer>
                     <FormButton type="submit">Dodaj drużynę</FormButton>
