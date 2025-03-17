@@ -32,7 +32,7 @@ export const LinkButton = styled(NavLink)`
     color: ${( { theme }) => theme.color.black};
     text-decoration: none;
     font-weight: 500;
-    border: 2px solid ${( { theme }) => theme.color.darkSeaGreen};
+    border: 2px solid ${( { theme }) => theme.color.snuff};
     border-radius: 30px;
     padding: 10px 15px;
     text-align: center;
@@ -40,7 +40,7 @@ export const LinkButton = styled(NavLink)`
     align-self: center;
 
     &.active {
-        border: 2px solid ${({ theme }) => theme.color.snuff};
+        border: 2px solid ${({ theme }) => theme.color.darkSeaGreen};
     }
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
