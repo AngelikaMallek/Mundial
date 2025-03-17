@@ -11,8 +11,8 @@ export const theme = {
 		stormGray: "#74788B",
 		scienceBlue: "#0044CC",
 		snuff: "#ebffeb",
-		darkSeaGreen: "#afcfaf",
-		liteSeaGreen: "#cfe2cf",
+		darkSeaGreen: "#407F29",
+		liteSeaGreen: "#E2EEE2",
 	},
 
 	breakpoints: {
