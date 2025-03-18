@@ -15,29 +15,30 @@ export const useTeamForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const validationCountryName = country.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        const teamExists = teams.some((existingTeam) => existingTeam.country.toLowerCase() === validationCountryName.toLowerCase());
+        const count = teams.filter((countTeam) => countTeam.team.toLowerCase() === team.toLowerCase()).length; 
+        const isLetter = (str) => /^[a-zA-Z]$/.test(str);
+
         setSuccess(false);
 
-        if (!team || !points || !country) {
+        if (!team || !points || !country || validationCountryName === "") {
             setValidationError('Wszystkie pola muszą być wypełnione!');
             return;
         }
-
-        const teamExists = teams.some((existingTeam) => existingTeam.country.toLowerCase() === country.toLowerCase());
 
         if (teamExists) {
             setValidationError('Drużyna o tej nazwie i kraju już istnieje!');
             return;
         }
-
-        const count = teams.filter((countTeam) => countTeam.team.toLowerCase() === team.toLowerCase()).length; 
         
         if (count >=5) {
             setValidationError('Grupa już posiada 5 drużyn!');
             return;
         }
 
-        if(team.length != 1) {
-            setValidationError('Grupa musi być jedną literą, np: A!');
+        if(isLetter(team) === false || team.length != 1) {
+            setValidationError('Grupa musi być literą, np: A!');
             return;
         }
 
@@ -53,7 +54,7 @@ export const useTeamForm = () => {
             .insert([{
                 team: team.toUpperCase(),
                 points: parseInt(points),
-                country,
+                country: validationCountryName.charAt(0).toUpperCase() + validationCountryName.slice(1),
                 },
             ]);
         

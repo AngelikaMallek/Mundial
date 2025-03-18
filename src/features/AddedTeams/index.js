@@ -45,6 +45,7 @@ const AddedTeams = () => {
                             value={points}
                             onChange={(e) => setPoints(e.target.value)}
                             required
+                            min={0}
                         />
                     </InputContainer>
                     <InputContainer>
