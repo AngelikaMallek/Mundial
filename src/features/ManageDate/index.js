@@ -1,10 +1,9 @@
-import { Table, TableTd, TableTr, TableCaption, TableTdRight } from '../../common/TableStyle';
 import { useApi } from '../../API/useAPI';
 import { Container } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
 
-const TeamsTable = () => {
+const ManageDate = () => {
     const { teams, loading, error } = useApi();
 
     if (loading) {
@@ -15,30 +14,26 @@ const TeamsTable = () => {
         return <Error />
     }
 
-    let counter = 0;
-
     return (
         <Container>
             {teams ? (
                 [...new Set(teams.map(team => team.team))].map((uniqueGrupa, index) => {
-                    counter = 0;
                     return (
-                        <Table key={index}>
-                            <TableCaption>Grupa: {uniqueGrupa}</TableCaption>
+                        <ol key={index}>
+                            <p>Grupa: {uniqueGrupa}</p>
                             {teams
                                 .filter(team => team.team === uniqueGrupa)
                                 .map((team) => {
-                                    counter++;
                                     return (
-                                        <TableTr>
-                                            <TableTd>{counter}</TableTd>
-                                            <TableTd>{team.team === uniqueGrupa ? team.country : null}</TableTd>
-                                            <TableTdRight>{team.team === uniqueGrupa ? team.points : null}</TableTdRight>
-                                        </TableTr>
+                                        <li>
+                                            {team.team === uniqueGrupa ? team.country : null}
+                                            <button>Edytuj</button>
+                                            <button>Usuń</button>
+                                        </li>
                                     )
                                 })
                             }
-                        </Table>
+                        </ol>
                     )
                 })
             ) : null}
@@ -47,4 +42,4 @@ const TeamsTable = () => {
 };
 
 
-export default TeamsTable
+export default ManageDate

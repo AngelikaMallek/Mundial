@@ -21,19 +21,16 @@ const TeamsTable = () => {
         <Container>
             {teams ? (
                 [...new Set(teams.map(team => team.team))].map((uniqueGrupa, index) => {
-                    counter = 0;
                     return (
                         <Table key={index}>
                             <TableCaption>Grupa: {uniqueGrupa}</TableCaption>
                             {teams
                                 .filter(team => team.team === uniqueGrupa)
                                 .map((team) => {
-                                    counter++;
                                     return (
                                         <TableTr>
-                                            <TableTd>{counter}</TableTd>
                                             <TableTd>{team.team === uniqueGrupa ? team.country : null}</TableTd>
-                                            <TableTdRight>{team.team === uniqueGrupa ? team.points : null}</TableTdRight>
+                                            <TableTd>{team.team === uniqueGrupa ? team.country : null}</TableTd>
                                         </TableTr>
                                     )
                                 })
