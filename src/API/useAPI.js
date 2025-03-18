@@ -13,6 +13,7 @@ export const useApi = () => {
                 const { data, error } = await supabase
                 .from('teams')
                 .select('*')
+                .order('team', { ascending: true })
                 .order('points', { ascending: false });
                 setTeams(data);
                 setLoading(false);
