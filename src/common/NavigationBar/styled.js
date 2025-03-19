@@ -17,10 +17,23 @@ export const StyledNavigation = styled.nav`
     }
 `;
 
-export const Links = styled.div`
+export const Links = styled.ul`
     display: flex;
     gap: 30px;    
     justify-content: flex-start;
+    padding: 0;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        gap: 5px;
+        justify-content: center;
+    }
+`;
+
+export const LinkItem = styled.li`
+    display: flex;
+    gap: 30px;    
+    justify-content: flex-start;
+    padding: 0;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         gap: 5px;
@@ -48,7 +61,7 @@ export const LinkButton = styled(NavLink)`
     }
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled.a`
     font-weight: 500;
     display: flex;
     align-items: center;

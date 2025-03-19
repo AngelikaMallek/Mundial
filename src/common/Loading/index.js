@@ -1,9 +1,10 @@
-import { Wrapper, StyledLoading } from "./styled";
+import { StyledLoading } from "./styled";
+import { Section } from "../Container";
 
 const Loading = () => (
-    <Wrapper>
+    <Section>
         <StyledLoading />
-    </Wrapper>
+    </Section>
 );
 
 export default Loading;

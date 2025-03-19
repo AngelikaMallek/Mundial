@@ -1,6 +1,6 @@
 import { Table, TableTd, TableTr, TableCaption, TableTdRight } from '../../common/TableStyle';
 import { useApi } from '../../API/useAPI';
-import { Container } from '../../common/Container';
+import { Section } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
 
@@ -18,7 +18,7 @@ const TeamsTable = () => {
     let counter = 0;
 
     return (
-        <Container>
+        <Section>
             {teams ? (
                 [...new Set(teams.map(team => team.team))].map((uniqueGrupa, index) => {
                     return (
@@ -39,7 +39,7 @@ const TeamsTable = () => {
                     )
                 })
             ) : null}
-        </Container>
+        </Section>
     );
 };
 

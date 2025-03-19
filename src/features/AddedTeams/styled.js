@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
 `;
@@ -10,6 +10,8 @@ export const Title = styled.p`
     font-weight: 600;
     text-transform: uppercase;
     color: ${({ theme}) => theme.color.darkSeaGreen};
+    margin: 0;
+    padding: 5px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         text-align: center; 
@@ -53,7 +55,7 @@ export const FormButton = styled.button`
     cursor: pointer;
 `;
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.section`
     display: flex;
     justify-content: space-between;
 

@@ -4,24 +4,29 @@ import TeamsTable from './features/TeamsTable';
 import AddedTeams from "./features/AddedTeams";
 import MatchesTables from "./features/MatchesTables";
 import ManageDate from "./features/ManageDate";
+import { Container, Section, SectionColumn } from "./common/Container";
 
 function App() {
-    return(
-        <HashRouter>
-            <Navigation />
-            <Switch>
-                <Route path="/teams">
-                    <TeamsTable />
-                </Route>
-                <Route path="/manage">
-                    <AddedTeams />
-                    <ManageDate />
-                </Route>
-                <Route path="/matches">
-                    <MatchesTables />
-                </Route>
-            </Switch>
-        </HashRouter>
+    return (
+        <Container>
+            <HashRouter>
+                <Navigation />
+                <Switch>
+                    <Route path="/teams">
+                        <TeamsTable />
+                    </Route>
+                    <Route path="/manage">
+                        <SectionColumn>
+                            <AddedTeams />
+                            <ManageDate />
+                        </SectionColumn>
+                    </Route>
+                    <Route path="/matches">
+                        <MatchesTables />
+                    </Route>
+                </Switch>
+            </HashRouter>
+        </Container>
     )
 }
 
