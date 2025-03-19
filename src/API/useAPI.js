@@ -28,7 +28,7 @@ export const useApi = () => {
             }
         }
         setLoading(true);
-        setTimeout(fetchTeams, 2000);
+        setTimeout(fetchTeams, 1);
     },[]);
 
 	return { teams, loading, error };
