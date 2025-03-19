@@ -1,5 +1,5 @@
 import { useApi } from '../../API/useAPI';
-import { Section } from '../../common/Container';
+import { Section, SectionColumn } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
 import { deleteItem } from './useDeleteItem';
@@ -17,7 +17,7 @@ const ManageDate = () => {
     }
 
     return (
-        <Section>
+        <SectionColumn>
             <Title>Zarzadzaj istniejącymi drużynami</Title>
             <Section>
                 {teams ? (
@@ -46,7 +46,7 @@ const ManageDate = () => {
                     })
                 ) : null}
             </Section>
-        </Section>
+        </SectionColumn>
     );
 };
 

@@ -22,7 +22,6 @@ export const Links = styled.ul`
     gap: 30px;    
     justify-content: flex-start;
     padding: 0;
-
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         gap: 5px;
         justify-content: center;
