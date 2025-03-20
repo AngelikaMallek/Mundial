@@ -7,13 +7,13 @@ import { deleteItem } from './useDeleteItem';
 import { List, ListItem, Title, Button, ListInternalItem, Caption } from './styled';
 import { DeletedFixed, FixedButton, Parahraph } from "./FixedComponents";
 
-const FixedComponentDeleted = ({id, name}) => (
+const FixedComponentDeleted = ({id, name, setShowConfirm}) => (
     <DeletedFixed>
         <Parahraph>Czy napewno chcesz usunąć kraj:<br/> {name} ?</Parahraph>
         <List>
             <ListInternalItem>
                 <FixedButton onClick={() => deleteItem(id)}>Tak</FixedButton>
-                <FixedButton>Nie</FixedButton>
+                <FixedButton onClick={() => setShowConfirm(false)}>Nie</FixedButton>
             </ListInternalItem>
         </List>
     </DeletedFixed>
@@ -48,6 +48,7 @@ const ManageDate = () => {
                     <FixedComponentDeleted 
                         id={deletedCountryId}
                         name={deletedCountry}
+                        setShowConfirm={setShowConfirm}
                     />
                 )}
                 {teams ? (

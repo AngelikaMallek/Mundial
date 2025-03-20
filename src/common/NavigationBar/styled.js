@@ -60,7 +60,7 @@ export const LinkButton = styled(NavLink)`
     }
 `;
 
-export const LogoWrapper = styled.a`
+export const LogoWrapper = styled.div`
     font-weight: 500;
     display: flex;
     align-items: center;

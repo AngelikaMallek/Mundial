@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import supabase from "../../API/ApiKey";
 import { useApi } from "../../API/useAPI";
 
@@ -11,6 +11,14 @@ export const useTeamForm = () => {
     const [success, setSuccess] = useState(false);
     const [validationError, setValidationError] = useState('');
     const { teams } = useApi();
+
+    useEffect(() => {
+        if (success) {
+            setTimeout(() => {
+                window.location.reload();
+            }, 2000);
+        }
+    }, [success]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
