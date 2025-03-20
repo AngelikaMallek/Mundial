@@ -1,4 +1,4 @@
-import { Table, TableTd, TableTr, TableCaption, TableTdRight } from '../../common/TableStyle';
+import { Table, TableTd, TableTr, TableCaption } from '../../common/TableStyle';
 import { useApi } from '../../API/useAPI';
 import { Section } from '../../common/Container';
 import Loading from '../../common/Loading';
@@ -14,8 +14,6 @@ const TeamsTable = () => {
     if (error) {
         return <Error />
     }
-
-    let counter = 0;
 
     return (
         <Section>

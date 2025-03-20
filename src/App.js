@@ -4,7 +4,7 @@ import TeamsTable from './features/TeamsTable';
 import AddedTeams from "./features/AddedTeams";
 import MatchesTables from "./features/MatchesTables";
 import ManageDate from "./features/ManageDate";
-import { Container, Section, SectionColumn } from "./common/Container";
+import { Container, SectionColumn } from "./common/Container";
 
 function App() {
     return (

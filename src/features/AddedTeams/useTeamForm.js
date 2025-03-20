@@ -37,7 +37,7 @@ export const useTeamForm = () => {
             return;
         }
 
-        if (isLetter(team) === false || team.length != 1) {
+        if (isLetter(team) === false || team.length !== 1) {
             setValidationError('Grupa musi być literą, np: A!');
             return;
         }
