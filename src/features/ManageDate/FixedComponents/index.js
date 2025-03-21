@@ -17,7 +17,7 @@ export const DeletedFixed = styled.div`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 200px;
-        height: 150px;
+        height: 200px;
     }
 `;
 
@@ -37,4 +37,19 @@ export const FixedButton = styled.button`
     font-weight: 600;
     padding: 10px;
     cursor: pointer;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 5px;
+        margin: 0;
+    }
+`
+
+export const Form = styled.form`
+`
+
+export const FormInput = styled.input`
+    background-color: ${({ theme}) => theme.color.darkSeaGreen};
+    border: none;
+    border-bottom: 2px solid ${({ theme}) => theme.color.black};
+    padding: 5px;
 `
