@@ -1,36 +1,29 @@
-import { useState } from "react";
 import { useApi } from '../../API/useAPI';
 import { Section, SectionColumn } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
-import { deleteItem } from './useDeleteItem';
-import { List, ListItem, Title, Button, ListInternalItem, Caption } from './styled';
-import { DeletedFixed, FixedButton, Parahraph } from "./FixedComponents";
-
-const FixedComponentDeleted = ({id, name, setShowConfirm}) => (
-    <DeletedFixed>
-        <Parahraph>Czy napewno chcesz usunąć kraj:<br/> {name} ?</Parahraph>
-        <List>
-            <ListInternalItem>
-                <FixedButton onClick={() => deleteItem(id)}>Tak</FixedButton>
-                <FixedButton onClick={() => setShowConfirm(false)}>Nie</FixedButton>
-            </ListInternalItem>
-        </List>
-    </DeletedFixed>
-)
+import { Title, List, Caption, ListItem, Button, ListInternalItem } from "./styled"
+import { FixedComponentUpdated, useUpdateClick } from "./FixedComponents/useUpdateClick";
+import { FixedComponentDeleted, useDeleteClick } from "./FixedComponents/useDeleteClick";
 
 const ManageDate = () => {
     const { teams, loading, error } = useApi();
 
-    const [showConfirm, setShowConfirm] = useState(false);
-    const [deletedCountry, setDeletedCountry] = useState(null);
-    const [deletedCountryId, setDeletedCountryId] = useState(null);
+    const { 
+        showConfirm,
+        setShowConfirm,
+        deletedCountry,
+        deletedCountryId,
+        handleDeleteClick,
+    } = useDeleteClick();
 
-    const handleDeleteClick = (id, team) => {
-        setShowConfirm(true);
-        setDeletedCountry(team);
-        setDeletedCountryId(id);
-    };
+    const {
+        showUpdatedConfirm,
+        setShowUpdatedConfirm,
+        updatedCountry,
+        updatedCountryId,
+        handleUpdatedClick,
+    } = useUpdateClick();
 
     if (loading) {
         return <Loading />;
@@ -51,6 +44,13 @@ const ManageDate = () => {
                         setShowConfirm={setShowConfirm}
                     />
                 )}
+                {showUpdatedConfirm && updatedCountry && (
+                    <FixedComponentUpdated
+                        id={updatedCountryId}
+                        name={updatedCountry}
+                        setShowUpdatedConfirm={setShowUpdatedConfirm}
+                    />
+                )}
                 {teams ? (
                     [...new Set(teams.map(team => team.team))].map((uniqueGrupa, index) => {
                         return (
@@ -64,7 +64,7 @@ const ManageDate = () => {
                                                 {team.team === uniqueGrupa ? team.country : null}
                                                 <List>
                                                     <ListInternalItem>
-                                                        <Button>Edytuj</Button>
+                                                        <Button onClick={() => handleUpdatedClick(team.id,team.country)}>Edytuj</Button>
                                                         <Button onClick={() => handleDeleteClick(team.id,team.country)}>Usuń</Button>
                                                     </ListInternalItem>
                                                 </List>

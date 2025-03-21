@@ -14,11 +14,22 @@ export const DeletedFixed = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 200px;
+        height: 150px;
+    }
 `;
 
 export const Parahraph = styled.p`
     text-align: center;
     font-weight: 600;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 15px;
+        margin: 0;
+        margin-top: 10px;
+    }
 `
 
 export const FixedButton = styled.button`
