@@ -8,8 +8,10 @@ export const deleteItem = async (itemId) => {
             .delete()
             .eq('id', itemId);
             window.location.reload();
-        if (error) throw error;
-    } catch {
 
+            if (error) throw error;
+        
+    } catch (error) {
+        console.error('Error in delete process:', error);
     }
 }

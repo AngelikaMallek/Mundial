@@ -53,3 +53,7 @@ export const FormInput = styled.input`
     border-bottom: 2px solid ${({ theme}) => theme.color.black};
     padding: 5px;
 `
+
+export const FormInputDisplay = styled.input`
+    display: none;
+`

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { DeletedFixed, FixedButton, Parahraph, Form, FormInput } from ".";
+import { useState, useEffect } from "react";
+import { DeletedFixed, FixedButton, Parahraph, Form, FormInput, FormInputDisplay } from ".";
 import { List, ListInternalItem } from "../styled"
 import { useUpdatedItem } from "./useUpdatedItem";
 
@@ -27,7 +27,11 @@ export const useUpdateClick = () => {
 
 export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
 
-    const { newCountry, setNewCountry, handleUpdatedSubmit } = useUpdatedItem();
+    const { newCountry, setNewCountry, newCountryId, setNewCountryId, handleUpdatedSubmit } = useUpdatedItem();
+
+    useEffect(() => {
+        setNewCountryId(id);
+    }, [id, setNewCountryId]);
 
     return (
     <DeletedFixed>
@@ -39,6 +43,12 @@ export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
                 value={newCountry}
                 onChange={(e) => setNewCountry(e.target.value)}
                 required
+            />
+            <FormInputDisplay 
+                type="number"
+                id="id"
+                value={newCountryId}
+                onChange={(e) => {setNewCountryId(e.target.value)}}
             />
             <List>
             <ListInternalItem>
