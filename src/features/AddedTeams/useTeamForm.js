@@ -36,7 +36,7 @@ export const useTeamForm = () => {
         }
 
         if (teamExists) {
-            setValidationError('Drużyna o tej nazwie i kraju już istnieje!');
+            setValidationError('Drużyna o tej nazwie kraju już istnieje!');
             return;
         }
 

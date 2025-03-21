@@ -27,7 +27,7 @@ export const useUpdateClick = () => {
 
 export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
 
-    const { newCountry, setNewCountry, newCountryId, setNewCountryId, handleUpdatedSubmit } = useUpdatedItem();
+    const { newCountry, setNewCountry, newCountryId, setNewCountryId, handleUpdatedSubmit, validationError } = useUpdatedItem();
 
     useEffect(() => {
         setNewCountryId(id);
@@ -42,7 +42,6 @@ export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
                 id="team"
                 value={newCountry}
                 onChange={(e) => setNewCountry(e.target.value)}
-                required
             />
             <FormInputDisplay 
                 type="number"
@@ -51,11 +50,12 @@ export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
                 onChange={(e) => {setNewCountryId(e.target.value)}}
             />
             <List>
-            <ListInternalItem>
-                <FixedButton type="submit">Zapisz</FixedButton>
-                <FixedButton onClick={() => setShowUpdatedConfirm(false)}>Anuluj</FixedButton>
-            </ListInternalItem>
-        </List>
+                <ListInternalItem>
+                    <FixedButton type="submit">Zapisz</FixedButton>
+                    <FixedButton onClick={() => setShowUpdatedConfirm(false)}>Anuluj</FixedButton>
+                </ListInternalItem>
+            </List>
+            <Parahraph>{validationError}</Parahraph>
         </Form>
     </DeletedFixed>
 )}

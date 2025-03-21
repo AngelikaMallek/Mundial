@@ -1,13 +1,29 @@
 import supabase from '../../../API/ApiKey';
 import { useState } from "react";
+import { useApi } from "../../../API/useAPI";
 
 export const useUpdatedItem = () => {
 
     const [newCountry, setNewCountry] = useState('');
     const [newCountryId, setNewCountryId] = useState('');
+    const [validationError, setValidationError] = useState('');
+    const { teams } = useApi();
 
     const handleUpdatedSubmit = async (e) => {
         e.preventDefault();
+
+        const validationCountryName = newCountry.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        const teamExists = teams.some((existingTeam) => existingTeam.country.toLowerCase() === validationCountryName.toLowerCase());
+
+        if (teamExists) {
+            setValidationError('Drużyna o tej nazwie kraju już istnieje!');
+            return;
+        }
+
+        if (!newCountry) {
+            setValidationError('Wszystkie pola muszą być wypełnione!');
+            return;
+        }
 
         try {
             const { data, error } = await supabase
@@ -25,5 +41,5 @@ export const useUpdatedItem = () => {
 
     }
 
-    return{ newCountry, setNewCountry, newCountryId, setNewCountryId, handleUpdatedSubmit}
+    return{ newCountry, setNewCountry, newCountryId, setNewCountryId, handleUpdatedSubmit, validationError}
 }

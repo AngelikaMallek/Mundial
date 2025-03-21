@@ -5,8 +5,8 @@ export const DeletedFixed = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 350px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
     background-color: ${({theme}) => theme.color.darkSeaGreen};
     border-radius: 20%;
     opacity: 90%;
@@ -14,10 +14,12 @@ export const DeletedFixed = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 20px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 200px;
+        width: 250px;
         height: 200px;
+        padding: 10px;
     }
 `;
 
@@ -26,7 +28,7 @@ export const Parahraph = styled.p`
     font-weight: 600;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        font-size: 15px;
+        font-size: 10px;
         margin: 0;
         margin-top: 10px;
     }
@@ -41,6 +43,7 @@ export const FixedButton = styled.button`
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         padding: 5px;
         margin: 0;
+        font-size: 10px;
     }
 `
 
@@ -52,6 +55,13 @@ export const FormInput = styled.input`
     border: none;
     border-bottom: 2px solid ${({ theme}) => theme.color.black};
     padding: 5px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 10px;
+    }
 `
 
 export const FormInputDisplay = styled.input`
