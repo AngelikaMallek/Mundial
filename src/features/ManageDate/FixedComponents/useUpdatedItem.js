@@ -12,7 +12,7 @@ export const useUpdatedItem = () => {
     const handleUpdatedSubmit = async (e) => {
         e.preventDefault();
 
-        const validationCountryName = newCountry.replace(/[^a-zA-Z]/g, '').toLowerCase();
+        const validationCountryName = newCountry.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, '').toLowerCase();
         const teamExists = teams.some((existingTeam) => existingTeam.country.toLowerCase() === validationCountryName.toLowerCase());
 
         if (teamExists) {
@@ -28,7 +28,7 @@ export const useUpdatedItem = () => {
         try {
             const { data, error } = await supabase
                 .from('teams')
-                .update({ country: newCountry })
+                .update({ country: validationCountryName.charAt(0).toUpperCase() + validationCountryName.slice(1) })
                 .eq('id', newCountryId);
 
                 window.location.reload();
