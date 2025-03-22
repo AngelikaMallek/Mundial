@@ -14,10 +14,9 @@ export const StyledLoading = styled.div`
     border: 12px solid ${({ theme }) => theme.color.snuff};
     border-right: 12px solid ${({ theme }) => theme.color.darkSeaGreen};
     animation: ${rotation} 3s linear infinite;
-    margin: 120px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
     }
 `;
