@@ -9,6 +9,10 @@ export const Container = styled.main`
     gap: 24px;
     justify-content: center;
     flex-direction: column;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 5px;;
+    }
 `;
 
 export const Section = styled.section`
@@ -19,6 +23,10 @@ export const Section = styled.section`
     flex-wrap: wrap;
     gap: 24px;
     justify-content: center;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 5px;
+    }
 `;
 
 export const SectionColumn = styled.section`

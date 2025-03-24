@@ -62,4 +62,14 @@ export const Button = styled.button`
     font-weight: 500;
     font-size: 15px;
     cursor: pointer;
+    transition: background 1s;
 `
+
+export const ToggleButton = styled(Button)`
+    background-color: ${({ theme}) => theme.color.liteSeaGreen};
+
+    &:hover{
+        background-color: ${({ theme}) => theme.color.hoverLiteSeaGreen};
+        cursor: pointer;
+    }
+`;

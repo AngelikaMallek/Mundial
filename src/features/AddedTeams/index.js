@@ -1,6 +1,6 @@
 import Error from "../../common/Error";
 import { Section } from "../../common/Container";
-import { Title, Form, FormLabel, FormInput, FormButton, InputContainer, FeetbackInform } from './styled';
+import { Title, Form, FormLabel, FormInput, FormButton, InputContainer, FeetbackInform, ToggleFormButton } from './styled';
 import { useTeamForm } from './useTeamForm';
 
 const AddedTeams = () => {
@@ -57,7 +57,7 @@ const AddedTeams = () => {
                         required
                     />
                 </InputContainer>
-                <FormButton type="submit">Dodaj drużynę</FormButton>
+                <ToggleFormButton type="submit">Dodaj drużynę</ToggleFormButton>
                 <FeetbackInform>{success ? "Gratulacje! Drużyna została dodana!" : validationError}</FeetbackInform>
             </Form>
         </Section>

@@ -42,10 +42,11 @@ export const FormInput = styled.input`
     background-color: ${({ theme}) => theme.color.liteSeaGreen};
     border: none;
     border-bottom: 2px solid ${({ theme}) => theme.color.darkSeaGreen};
+    box-shadow: 2px 2px 5px hsl(0, 0%, 50%);
+    padding: 5px;
 `;
 
 export const FormButton = styled.button`
-    background-color: ${({ theme}) => theme.color.liteSeaGreen};
     border: 2px solid ${({ theme}) => theme.color.darkSeaGreen};
     color: ${({ theme}) => theme.color.darkSeaGreen};
     padding: 5px;
@@ -53,6 +54,17 @@ export const FormButton = styled.button`
     font-weight: 600;
     font-size: 20px;
     cursor: pointer;
+    transition: background 1s;
+    box-shadow: 2px 2px 5px hsl(0, 0%, 50%);
+`;
+
+export const ToggleFormButton = styled(FormButton)`
+    background-color: ${({ theme}) => theme.color.liteSeaGreen};
+
+    &:hover{
+        background-color: ${({ theme}) => theme.color.hoverLiteSeaGreen};
+        cursor: pointer;
+    }
 `;
 
 export const InputContainer = styled.section`

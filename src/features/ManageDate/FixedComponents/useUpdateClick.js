@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { DeletedFixed, FixedButton, Parahraph, Form, FormInput, FormInputDisplay } from ".";
+import { DeletedFixed, ToggleFixedButton, Parahraph, Form, FormInput, FormInputDisplay } from ".";
 import { List, ListInternalItem } from "../styled"
 import { useUpdatedItem } from "./useUpdatedItem";
 
@@ -51,8 +51,8 @@ export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
             />
             <List>
                 <ListInternalItem>
-                    <FixedButton type="submit">Zapisz</FixedButton>
-                    <FixedButton onClick={() => setShowUpdatedConfirm(false)}>Anuluj</FixedButton>
+                    <ToggleFixedButton type="submit">Zapisz</ToggleFixedButton>
+                    <ToggleFixedButton onClick={() => setShowUpdatedConfirm(false)}>Anuluj</ToggleFixedButton>
                 </ListInternalItem>
             </List>
             <Parahraph>{validationError}</Parahraph>

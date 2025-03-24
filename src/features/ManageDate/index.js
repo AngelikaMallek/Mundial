@@ -2,7 +2,7 @@ import { useApi } from '../../API/useAPI';
 import { Section, SectionColumn } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
-import { Title, List, Caption, ListItem, Button, ListInternalItem } from "./styled"
+import { Title, List, Caption, ListItem, ToggleButton, ListInternalItem } from "./styled"
 import { FixedComponentUpdated, useUpdateClick } from "./FixedComponents/useUpdateClick";
 import { FixedComponentDeleted, useDeleteClick } from "./FixedComponents/useDeleteClick";
 
@@ -64,8 +64,8 @@ const ManageDate = () => {
                                                 {team.team === uniqueGrupa ? team.country : null}
                                                 <List>
                                                     <ListInternalItem>
-                                                        <Button onClick={() => handleUpdatedClick(team.id,team.country)}>Edytuj</Button>
-                                                        <Button onClick={() => handleDeleteClick(team.id,team.country)}>Usuń</Button>
+                                                        <ToggleButton onClick={() => handleUpdatedClick(team.id,team.country)}>Edytuj</ToggleButton>
+                                                        <ToggleButton onClick={() => handleDeleteClick(team.id,team.country)}>Usuń</ToggleButton>
                                                     </ListInternalItem>
                                                 </List>
                                             </ListItem>

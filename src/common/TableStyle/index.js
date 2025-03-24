@@ -5,11 +5,20 @@ export const Table = styled.table`
     background-color: ${( { theme }) => theme.color.darkSeaGreen };
     border-radius: 0 0 10px 10px;
     min-width: 200px;
-    width: 300px;
+    box-shadow: 2px 2px 15px hsl(0, 0%, 50%);
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 5px;
+        width: 270px;
+    }
 `;
 
 export const TableTr = styled.tr`
     padding: 5px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 0;
+    }
 `;
 
 export const TableTd = styled.td`

@@ -7,6 +7,8 @@ export const useApi = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
+    
+
 	useEffect(() => {
         const fetchTeams = async () => {
             try {

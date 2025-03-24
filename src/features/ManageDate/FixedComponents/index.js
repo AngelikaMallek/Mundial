@@ -15,6 +15,7 @@ export const DeletedFixed = styled.div`
     align-items: center;
     flex-direction: column;
     font-size: 20px;
+    box-shadow: 2px 2px 15px hsl(0, 0%, 50%);
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 250px;
@@ -28,7 +29,7 @@ export const Parahraph = styled.p`
     font-weight: 600;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        font-size: 10px;
+        font-size: 12px;
         margin: 0;
         margin-top: 10px;
     }
@@ -37,15 +38,27 @@ export const Parahraph = styled.p`
 export const FixedButton = styled.button`
     text-align: center;
     font-weight: 600;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
+    transition: background 1s;
+    border: 0;
+    background-color: ${({theme}) => theme.color.darkSeaGreen};
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        padding: 5px;
+        padding: 10px;
         margin: 0;
         font-size: 10px;
     }
 `
+
+export const ToggleFixedButton = styled(FixedButton)`
+    background-color: ${({ theme}) => theme.color.liteSeaGreen};
+
+    &:hover{
+        background-color: ${({ theme}) => theme.color.hoverLiteSeaGreen};
+        cursor: pointer;
+    }
+`;
 
 export const Form = styled.form`
 `

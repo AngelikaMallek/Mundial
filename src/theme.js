@@ -12,6 +12,7 @@ export const theme = {
 		scienceBlue: "#0044CC",
 		snuff: "#ebffeb",
 		darkSeaGreen: "#407F29",
+		hoverLiteSeaGreen: "#F7FBF7",
 		liteSeaGreen: "#E2EEE2",
 	},
 
