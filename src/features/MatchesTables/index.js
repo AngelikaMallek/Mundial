@@ -3,9 +3,11 @@ import { useApi } from '../../API/useAPI';
 import { Section } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
+import { useApiToMatch } from '../../API/useAPIToMatch';
 
 const TeamsTable = () => {
     const { teams, loading, error } = useApi();
+    const { matchResults } = useApiToMatch();
 
     if (loading) {
         return <Loading />;
@@ -31,15 +33,26 @@ const TeamsTable = () => {
                     return (
                         <Table key={index}>
                             <TableCaption>Grupa: {uniqueGrupa}</TableCaption>
-                            {matches.map((match, matchIndex) => (
-                                <TableTr key={matchIndex}>
-                                    <TableTd>{match[0].country}</TableTd>
-                                    <TableTd>{match[1].country}</TableTd>
-                                    <TableTdRight>
-                                        {match[0].points}-{match[1].points}
-                                    </TableTdRight>
-                                </TableTr>
-                            ))}
+                            {matches.map((match, matchIndex) => {
+                                const matchResult = matchResults && Array.isArray(matchResults)
+                                    ? matchResults.find(result =>
+                                        (result.country_1 === match[0].id && result.country_2 === match[1].id) ||
+                                        (result.country_1 === match[1].id && result.country_2 === match[0].id)
+                                    )
+                                    : null;
+                                const points1 = matchResult ? matchResult.points_1 : 0;
+                                const points2 = matchResult ? matchResult.points_2 : 0;
+
+                                return (
+                                    <TableTr key={matchIndex}>
+                                        <TableTd>{match[0].country}</TableTd>
+                                        <TableTd>{match[1].country}</TableTd>
+                                        <TableTdRight>
+                                            {points1}-{points2}
+                                        </TableTdRight>
+                                    </TableTr>
+                                );
+                            })}
                         </Table>
                     );
                 })
