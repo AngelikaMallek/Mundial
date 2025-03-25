@@ -43,6 +43,7 @@ export const FixedButton = styled.button`
     transition: background 1s;
     border: 0;
     background-color: ${({theme}) => theme.color.darkSeaGreen};
+    border-radius: 30%;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         padding: 10px;

@@ -36,7 +36,7 @@ const TeamsTable = () => {
                                     <TableTd>{match[0].country}</TableTd>
                                     <TableTd>{match[1].country}</TableTd>
                                     <TableTdRight>
-                                        {match[0].points} - {match[1].points}
+                                        {match[0].points}-{match[1].points}
                                     </TableTdRight>
                                 </TableTr>
                             ))}

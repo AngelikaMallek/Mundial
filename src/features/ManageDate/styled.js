@@ -40,7 +40,7 @@ export const List = styled.ol`
 export const ListItem = styled.li`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     gap: 10px;
     text-align: center;
 
@@ -48,7 +48,7 @@ export const ListItem = styled.li`
 
 export const ListInternalItem = styled.li`
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     gap: 5px;
     margin: 0;
 `
