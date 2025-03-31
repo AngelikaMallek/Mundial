@@ -5,6 +5,7 @@ import AddedTeams from "./features/AddedTeams";
 import MatchesTables from "./features/MatchesTables";
 import ManageDate from "./features/ManageDate";
 import { Container, SectionColumn } from "./common/Container";
+import CountryTile from "./features/CountryTile";
 
 function App() {
     return (
@@ -12,6 +13,9 @@ function App() {
             <HashRouter>
                 <Navigation />
                 <Switch>
+                    <Route path="/matches/:id">
+                        <CountryTile />
+                    </Route>
                     <Route path="/teams">
                         <TeamsTable />
                     </Route>

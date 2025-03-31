@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Table = styled.table`
     padding: 15px;
@@ -29,6 +30,18 @@ export const TableTd = styled.td`
     padding: 5px;
     text-align: center;
     font-weight: 500;
+`;
+
+export const LinkCountry = styled(Link)`
+    text-decoration: none;
+    color: ${( { theme }) => theme.color.black };
+    transition: color 1s;
+`;
+
+export const ToggleLink = styled(LinkCountry)`
+    &:hover{
+        color: ${({ theme}) => theme.color.hoverLiteSeaGreen};
+    }
 `;
 
 export const TableTdRight = styled.td`

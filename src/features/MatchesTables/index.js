@@ -1,4 +1,4 @@
-import { Table, TableTd, TableTr, TableCaption, TableTdRight } from '../../common/TableStyle';
+import { Table, TableTd, TableTr, TableCaption, TableTdRight, ToggleLink } from '../../common/TableStyle';
 import { useApi } from '../../API/useAPI';
 import { Section } from '../../common/Container';
 import Loading from '../../common/Loading';
@@ -45,8 +45,8 @@ const TeamsTable = () => {
 
                                 return (
                                     <TableTr key={matchIndex}>
-                                        <TableTd>{match[0].country}</TableTd>
-                                        <TableTd>{match[1].country}</TableTd>
+                                        <TableTd><ToggleLink to={`/matches/${match[0].id}`}>{match[0].country}</ToggleLink></TableTd>
+                                        <TableTd><ToggleLink to={`/matches/${match[1].id}`}>{match[1].country}</ToggleLink></TableTd>
                                         <TableTdRight>
                                             {points1}-{points2}
                                         </TableTdRight>
