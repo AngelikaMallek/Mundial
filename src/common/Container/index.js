@@ -29,6 +29,13 @@ export const Section = styled.section`
     }
 `;
 
+export const SectionCountryTile = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+`;
+
 export const SectionColumn = styled.section`
     max-width: 80vw;
     margin: 0 auto;

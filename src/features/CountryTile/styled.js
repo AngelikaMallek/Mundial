@@ -5,6 +5,18 @@ export const Title = styled.h1`
     text-align: center;
 `
 
+export const Image = styled.img`
+    width: 150px;
+`
+
+export const Wrapper = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+`
+
 export const Button = styled.button`
     background-color: ${({ theme}) => theme.color.darkSeaGreen};
     border: 2px solid ${({ theme}) => theme.color.liteSeaGreen};
