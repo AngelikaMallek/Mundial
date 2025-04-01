@@ -4,15 +4,15 @@ import Loading from '../../common/Loading';
 import Error from '../../common/Error';
 import { useParams } from 'react-router-dom';
 import { Title, ToggleButton, Image, Wrapper } from './styled';
-import { Table, TableCaption, TableTd, TableTr } from '../../common/TableStyle';
+import { Table, TableCaption, TableTd, TableTr, ToggleLink } from '../../common/TableStyle';
 import { useCountryApi } from "../../API/useCountryApi";
 
 const CountryTile = () => {
     const { id } = useParams();
     const countryId = Number(id);
-    const { flags } = useCountryApi(countryId);
+    const { flags, loading, error } = useCountryApi(countryId);
 
-    const { teams, loading, error } = useApi();
+    const { teams } = useApi();
 
     if (loading) {
         return <Loading />;
@@ -34,7 +34,7 @@ const CountryTile = () => {
                         return (
                             <Wrapper>
                                 <Image src={flag.flags.png} alt={flag.flags.alt}></Image>
-                                <Image src={flag.coatOfArms.png}></Image>
+                                <Image src={flag.coatOfArms.png} alt="coatOfArms"></Image>
                             </Wrapper>
                         )
                     })
@@ -47,8 +47,8 @@ const CountryTile = () => {
                     .map((team) => {
                         return (
                             <TableTr>
-                                <TableTd>{selectedTeam.country}</TableTd>
-                                <TableTd>{team.country}</TableTd>
+                                <TableTd><ToggleLink to={`/matches/${selectedTeam.id}`}>{selectedTeam.country}</ToggleLink></TableTd>
+                                <TableTd><ToggleLink to={`/matches/${team.id}`}>{team.country}</ToggleLink></TableTd>
                                 <TableTd><ToggleButton>Dodaj wynik</ToggleButton></TableTd>
                             </TableTr>
                         );

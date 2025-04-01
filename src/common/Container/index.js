@@ -34,6 +34,7 @@ export const SectionCountryTile = styled.section`
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    padding-bottom: 30px;
 `;
 
 export const SectionColumn = styled.section`

@@ -1,4 +1,4 @@
-import { Table, TableTd, TableTr, TableCaption, TableTdRight } from '../../common/TableStyle';
+import { Table, TableTd, TableTr, TableCaption, TableTdRight, ToggleLink } from '../../common/TableStyle';
 import { useApi } from '../../API/useAPI';
 import { Section } from '../../common/Container';
 import Loading from '../../common/Loading';
@@ -32,7 +32,7 @@ const TeamsTable = () => {
                                     return (
                                         <TableTr>
                                             <TableTd>{counter}</TableTd>
-                                            <TableTd>{team.team === uniqueGrupa ? team.country : null}</TableTd>
+                                            <TableTd><ToggleLink to={`/matches/${team.id}`}>{team.team === uniqueGrupa ? team.country : null}</ToggleLink></TableTd>
                                             <TableTdRight>{team.team === uniqueGrupa ? team.points : null}</TableTdRight>
                                         </TableTr>
                                     )
