@@ -1,5 +1,5 @@
 import { useApi } from '../../API/useAPI';
-import { Section, SectionColumn, SectionCountryTile } from '../../common/Container';
+import { SectionCountryTile } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
 import { useParams } from 'react-router-dom';
@@ -14,7 +14,7 @@ const CountryTile = () => {
 
     const { teams } = useApi();
 
-    if (loading) {
+    if (loading || !teams) {
         return <Loading />;
     }
 

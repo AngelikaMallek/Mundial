@@ -1,6 +1,6 @@
 import Error from "../../common/Error";
 import { Section } from "../../common/Container";
-import { Title, Form, FormLabel, FormInput, FormButton, InputContainer, FeetbackInform, ToggleFormButton } from './styled';
+import { Title, Form, FormLabel, FormInput, InputContainer, FeetbackInform, ToggleFormButton } from './styled';
 import { useTeamForm } from './useTeamForm';
 
 const AddedTeams = () => {
