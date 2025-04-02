@@ -40,15 +40,22 @@ const TeamsTable = () => {
                                         (result.country_1 === match[1].id && result.country_2 === match[0].id)
                                     )
                                     : null;
-                                const points1 = matchResult ? matchResult.points_1 : 0;
-                                const points2 = matchResult ? matchResult.points_2 : 0;
+
+                                const points1 = matchResult && matchResult.country_2 === match[0].id ? matchResult.points_2 : 0;
+                                const points2 = matchResult && matchResult.country_1 === match[1].id ? matchResult.points_1 : 0;
+
+                                const points3 = matchResult && matchResult.country_1 === match[0].id ? matchResult.points_1 : 0;
+                                const points4 = matchResult && matchResult.country_2 === match[1].id ? matchResult.points_2 : 0;
+
 
                                 return (
                                     <TableTr key={matchIndex}>
                                         <TableTd><ToggleLink to={`/matches/${match[0].id}`}>{match[0].country}</ToggleLink></TableTd>
                                         <TableTd><ToggleLink to={`/matches/${match[1].id}`}>{match[1].country}</ToggleLink></TableTd>
                                         <TableTdRight>
-                                            {points1}-{points2}
+                                            {(points1 === 0 && points2 === 0) ? `${points3}-${points4}` :
+                                            (points3 === 0 && points4 === 0) ? `${points1}-${points2}` :
+                                            `${points1}-${points2} ${points3}-${points4}`}
                                         </TableTdRight>
                                     </TableTr>
                                 );

@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { Title, ToggleButton, Image, Wrapper } from './styled';
 import { Table, TableCaption, TableTd, TableTr, ToggleLink } from '../../common/TableStyle';
 import { useCountryApi } from "../../API/useCountryApi";
+import { useApiToMatch } from '../../API/useAPIToMatch';
 
 const CountryTile = () => {
     const { id } = useParams();
@@ -14,7 +15,9 @@ const CountryTile = () => {
 
     const { teams } = useApi();
 
-    if (loading || !teams) {
+    const { matchResults } = useApiToMatch();
+
+    if (loading || !teams || !matchResults) {
         return <Loading />;
     }
 
@@ -45,11 +48,29 @@ const CountryTile = () => {
                 {teams
                     .filter(team => team.team === selectedTeam.team && team.id !== mainCountry.id)
                     .map((team) => {
+
+                        const match = matchResults.find(result => 
+                            (result.country_1 === selectedTeam.id && result.country_2 === team.id)
+                        );
+
+                        const matchTwo = matchResults.find(result => 
+                            (result.country_1 === team.id && result.country_2 === selectedTeam.id)
+                        );
+
                         return (
                             <TableTr>
                                 <TableTd><ToggleLink to={`/matches/${selectedTeam.id}`}>{selectedTeam.country}</ToggleLink></TableTd>
                                 <TableTd><ToggleLink to={`/matches/${team.id}`}>{team.country}</ToggleLink></TableTd>
-                                <TableTd><ToggleButton>Dodaj wynik</ToggleButton></TableTd>
+                                <TableTd>
+                                    {match ? (
+                                        <span>{match.points_1} - {match.points_2}</span>
+                                    ) : 
+                                    matchTwo ? (
+                                        <span>{matchTwo.points_2} - {matchTwo.points_1}</span>
+                                    ):(
+                                        <ToggleButton>Dodaj wynik</ToggleButton>
+                                    )}
+                                </TableTd>
                             </TableTr>
                         );
                     })
