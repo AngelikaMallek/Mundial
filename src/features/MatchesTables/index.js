@@ -5,7 +5,7 @@ import Loading from '../../common/Loading';
 import Error from '../../common/Error';
 import { useApiToMatch } from '../../API/useAPIToMatch';
 
-const TeamsTable = () => {
+const MatchesTable = () => {
     const { teams, loading, error } = useApi();
     const { matchResults } = useApiToMatch();
 
@@ -68,4 +68,4 @@ const TeamsTable = () => {
     );
 };
 
-export default TeamsTable;
+export default MatchesTable;
