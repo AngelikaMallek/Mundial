@@ -7,6 +7,7 @@ import { Title, ToggleButton, Image, Wrapper } from './styled';
 import { Table, TableCaption, TableTd, TableTr, ToggleLink } from '../../common/TableStyle';
 import { useCountryApi } from "../../API/useCountryApi";
 import { useApiToMatch } from '../../API/useAPIToMatch';
+import { useUpdateMatch, FixedComponentUpdatedMatch } from "./FixedComponentMatch/useUpdateMatch"
 
 const CountryTile = () => {
     const { id } = useParams();
@@ -16,6 +17,14 @@ const CountryTile = () => {
     const { teams } = useApi();
 
     const { matchResults } = useApiToMatch();
+
+    const { 
+        handleUpdatedClick, 
+        showUpdatedConfirm, 
+        setShowUpdatedConfirm, 
+        country_1, 
+        country_2 
+    } = useUpdateMatch();
 
     if (loading || !teams || !matchResults) {
         return <Loading />;
@@ -30,6 +39,13 @@ const CountryTile = () => {
 
     return (
         <SectionCountryTile>
+            {showUpdatedConfirm && (
+                <FixedComponentUpdatedMatch 
+                    name1={country_1}
+                    name2={country_2}
+                    setShowUpdatedConfirm={setShowUpdatedConfirm}
+                />
+            )}
             <Title>{mainCountry.country}</Title>
                 {flags
                     .filter(flag => flag.translations.pol.common === selectedTeam.country)
@@ -68,7 +84,7 @@ const CountryTile = () => {
                                     matchTwo ? (
                                         <span>{matchTwo.points_2} - {matchTwo.points_1}</span>
                                     ):(
-                                        <ToggleButton>Dodaj wynik</ToggleButton>
+                                        <ToggleButton onClick={() => handleUpdatedClick(selectedTeam.country, team.country)}>Dodaj wynik</ToggleButton>
                                     )}
                                 </TableTd>
                             </TableTr>

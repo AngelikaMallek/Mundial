@@ -16,11 +16,11 @@ export const DeletedFixed = styled.div`
     flex-direction: column;
     font-size: 20px;
     box-shadow: 2px 2px 15px hsl(0, 0%, 50%);
+    padding: 10px;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 250px;
         height: 200px;
-        padding: 10px;
     }
 `;
 
@@ -69,7 +69,6 @@ export const FormInput = styled.input`
     border: none;
     border-bottom: 2px solid ${({ theme}) => theme.color.black};
     padding: 5px;
-    width: 100%;
     text-align: center;
     font-size: 20px;
 
@@ -80,4 +79,33 @@ export const FormInput = styled.input`
 
 export const FormInputDisplay = styled.input`
     display: none;
+`
+
+export const List = styled.ol`
+    text-align: center;
+    padding: 0;
+    font-weight: 500;
+    color: ${({ theme}) => theme.color.black};
+`
+
+export const ListInternalItem = styled.li`
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 0;
+`
+
+export const FormLabel = styled.label`
+    font-size: 15px;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    display: flex;
+    gap: 5px;
+
+    @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 10px;
+        margin: 0;
+        margin-top: 10px;
+    }
 `

@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { DeletedFixed, ToggleFixedButton, Parahraph } from "../FixedComponents";
-import { List, ListInternalItem } from "../styled";
+import { DeletedFixed, ToggleFixedButton, Parahraph, List, ListInternalItem } from "../../../common/FixedComponents";
 import { deleteItem } from "./useDeleteItem";
 
 export const useDeleteClick = () => {

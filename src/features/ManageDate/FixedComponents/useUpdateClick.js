@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { DeletedFixed, ToggleFixedButton, Parahraph, Form, FormInput, FormInputDisplay } from ".";
-import { List, ListInternalItem } from "../styled"
+import { DeletedFixed, ToggleFixedButton, Parahraph, Form, FormInput, FormInputDisplay, List, ListInternalItem } from "../../../common/FixedComponents";
 import { useUpdatedItem } from "./useUpdatedItem";
 
 export const useUpdateClick = () => {
