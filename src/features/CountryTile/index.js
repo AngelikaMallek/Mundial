@@ -23,7 +23,9 @@ const CountryTile = () => {
         showUpdatedConfirm, 
         setShowUpdatedConfirm, 
         country_1, 
-        country_2 
+        country_2,
+        countryId_1,
+        countryId_2,
     } = useUpdateMatch();
 
     if (loading || !teams || !matchResults) {
@@ -44,6 +46,8 @@ const CountryTile = () => {
                     name1={country_1}
                     name2={country_2}
                     setShowUpdatedConfirm={setShowUpdatedConfirm}
+                    id1={countryId_1}
+                    id2={countryId_2}
                 />
             )}
             <Title>{mainCountry.country}</Title>
@@ -84,7 +88,7 @@ const CountryTile = () => {
                                     matchTwo ? (
                                         <span>{matchTwo.points_2} - {matchTwo.points_1}</span>
                                     ):(
-                                        <ToggleButton onClick={() => handleUpdatedClick(selectedTeam.country, team.country)}>Dodaj wynik</ToggleButton>
+                                        <ToggleButton onClick={() => handleUpdatedClick(selectedTeam.country, team.country, selectedTeam.id, team.id)}>Dodaj wynik</ToggleButton>
                                     )}
                                 </TableTd>
                             </TableTr>

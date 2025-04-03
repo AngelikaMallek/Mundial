@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DeletedFixed, ToggleFixedButton, Parahraph, List, ListInternalItem } from "../../../common/FixedComponents";
+import { FixedWrapper, ToggleFixedButton, Parahraph, List, ListInternalItem } from "../../../common/FixedComponents";
 import { deleteItem } from "./useDeleteItem";
 
 export const useDeleteClick = () => {
@@ -25,7 +25,7 @@ export const useDeleteClick = () => {
 }
 
 export const FixedComponentDeleted = ({id, name, setShowConfirm}) => (
-    <DeletedFixed>
+    <FixedWrapper>
         <Parahraph>Czy napewno chcesz usunąć kraj:<br/> {name}?</Parahraph>
         <List>
             <ListInternalItem>
@@ -33,5 +33,5 @@ export const FixedComponentDeleted = ({id, name, setShowConfirm}) => (
                 <ToggleFixedButton onClick={() => setShowConfirm(false)}>Nie</ToggleFixedButton>
             </ListInternalItem>
         </List>
-    </DeletedFixed>
+    </FixedWrapper>
 )
