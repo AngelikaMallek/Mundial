@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { DeletedFixed, ToggleFixedButton, Parahraph, Form, FormInput, FormInputDisplay, List, ListInternalItem } from "../../../common/FixedComponents";
+import { FixedWrapper, ToggleFixedButton, Parahraph, Form, FormInput, FormInputDisplay, List, ListInternalItem } from "../../../common/FixedComponents";
 import { useUpdatedItem } from "./useUpdatedItem";
 
 export const useUpdateClick = () => {
@@ -33,7 +33,7 @@ export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
     }, [id, setNewCountryId]);
 
     return (
-    <DeletedFixed>
+    <FixedWrapper>
         <Parahraph>Podaj nową wersję elementu:<br/> {name}.</Parahraph>
         <Form onSubmit={handleUpdatedSubmit}>
             <FormInput
@@ -56,5 +56,5 @@ export const FixedComponentUpdated = ({id, name, setShowUpdatedConfirm}) => {
             </List>
             <Parahraph>{validationError}</Parahraph>
         </Form>
-    </DeletedFixed>
+    </FixedWrapper>
 )}

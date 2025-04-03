@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const DeletedFixed = styled.div`
+export const FixedWrapper = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
