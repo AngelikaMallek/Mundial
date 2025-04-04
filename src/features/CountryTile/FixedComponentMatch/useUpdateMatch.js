@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FixedWrapper, Form, FormInput, ToggleFixedButton, Parahraph, List, ListInternalItem, FormLabel, FormInputDisplay } from "../../../common/FixedComponents";
+import { useUpdatedMatchSubmit } from "./useUpdatedMatchSubmit";
 
 export const useUpdateMatch = () => {
     const [showUpdatedConfirm, setShowUpdatedConfirm] = useState(false);
@@ -28,25 +29,52 @@ export const useUpdateMatch = () => {
 }
 
 export const FixedComponentUpdatedMatch = ({ name1, name2, setShowUpdatedConfirm, id1, id2 }) => {
+
+    const { 
+        countryId1, 
+        countryId2,
+        setCountryId1, 
+        setCountryId2, 
+        matchResultsCountry1, 
+        matchResultsCountry2, 
+        setMatchResultsCountry1, 
+        setMatchResultsCountry2, 
+        handleMatchResultUpdatedSubmit,
+    } = useUpdatedMatchSubmit();
+
+    useEffect(() => {
+        setCountryId1(id1);
+    }, [id1, setCountryId1]);
+
+    useEffect(() => {
+        setCountryId2(id2);
+    }, [id2, setCountryId2]);
+
     return (
         <FixedWrapper>
-            <Form>
+            <Form onSubmit={handleMatchResultUpdatedSubmit}>
                 <Parahraph>Podaj wynik meczu:</Parahraph>
                 <FormLabel>{name1}:<FormInput 
                     type="number"
                     required
                     min={0}
+                    value={matchResultsCountry1}
+                    onChange={(e) => setMatchResultsCountry1(e.target.value)}
                 /></FormLabel>
                 <FormInputDisplay
-                    value={id1}
+                    value={countryId1}
+                    onChange={(e) => {setCountryId1(e.target.value)}}
                 />
                 <FormLabel>{name2}:<FormInput 
                     type="number"
                     required
                     min={0}
+                    value={matchResultsCountry2}
+                    onChange={(e) => setMatchResultsCountry2(e.target.value)}
                 /></FormLabel>
                 <FormInputDisplay
-                    value={id2}
+                    value={countryId2}
+                    onChange={(e) => {setCountryId2(e.target.value)}}
                 />
                 <List>
                 <ListInternalItem>
