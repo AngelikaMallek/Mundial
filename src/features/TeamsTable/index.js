@@ -30,7 +30,7 @@ const TeamsTable = () => {
                                 .map((team) => {
                                     counter++;
                                     return (
-                                        <TableTr>
+                                        <TableTr key={team.id}>
                                             <TableTd>{counter}</TableTd>
                                             <TableTd><ToggleLink to={`/matches/${team.id}`}>{team.team === uniqueGrupa ? team.country : null}</ToggleLink></TableTd>
                                             <TableTdRight>{team.team === uniqueGrupa ? team.points : null}</TableTdRight>
