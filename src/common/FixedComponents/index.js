@@ -62,6 +62,7 @@ export const ToggleFixedButton = styled(FixedButton)`
 `;
 
 export const Form = styled.form`
+    text-align: center;
 `
 
 export const FormInput = styled.input`

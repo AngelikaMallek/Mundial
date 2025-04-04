@@ -1,7 +1,7 @@
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import Navigation from './common/NavigationBar';
 import TeamsTable from './features/TeamsTable';
-import AddedTeams from "./features/AddedTeams";
+import AddedTeams from "./features/AddedTeamsForm";
 import MatchesTables from "./features/MatchesTables";
 import ManageDate from "./features/ManageDate";
 import { Container, SectionColumn } from "./common/Container";

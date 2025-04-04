@@ -20,7 +20,7 @@ export const useUpdatedItem = () => {
             return;
         }
 
-        if (!newCountry) {
+        if (!newCountry || validationCountryName === "") {
             setValidationError('Wszystkie pola muszą być wypełnione!');
             return;
         }
