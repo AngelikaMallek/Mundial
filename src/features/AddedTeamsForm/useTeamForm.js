@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import supabase from "../../API/ApiKey";
-import { useApi } from "../../API/useAPI";
+import { useApiToSelectCountrys } from "../../API/useApiToSelectCountrys";
+import { supabase } from "../../API/ApiKey";
 
 export const useTeamForm = () => {
 
@@ -9,7 +9,7 @@ export const useTeamForm = () => {
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
     const [validationError, setValidationError] = useState('');
-    const { teams } = useApi();
+    const { teams } = useApiToSelectCountrys();
 
     useEffect(() => {
         if (success) {

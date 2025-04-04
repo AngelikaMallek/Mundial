@@ -1,4 +1,4 @@
-import supabase from '../../../API/ApiKey';
+import { supabase } from '../../../API/ApiKey';
 import { useState } from "react";
 
 export const useUpdatedMatchSubmit = () => {

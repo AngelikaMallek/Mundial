@@ -1,12 +1,12 @@
 import { Table, TableTd, TableTr, TableCaption, TableTdRight, ToggleLink } from '../../common/TableStyle';
-import { useApi } from '../../API/useAPI';
+import { useApiToSelectCountrys } from '../../API/useApiToSelectCountrys';
 import { Section } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
 import { useApiToMatch } from '../../API/useAPIToMatch';
 
 const MatchesTable = () => {
-    const { teams, loading, error } = useApi();
+    const { teams, loading, error } = useApiToSelectCountrys();
     const { matchResults } = useApiToMatch();
 
     if (loading) {

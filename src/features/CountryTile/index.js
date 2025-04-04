@@ -1,4 +1,4 @@
-import { useApi } from '../../API/useAPI';
+import { useApiToSelectCountrys } from '../../API/useApiToSelectCountrys';
 import { SectionCountryTile } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
@@ -14,7 +14,7 @@ const CountryTile = () => {
     const countryId = Number(id);
     const { flags, loading, error } = useCountryApi(countryId);
 
-    const { teams } = useApi();
+    const { teams } = useApiToSelectCountrys();
 
     const { matchResults } = useApiToMatch();
 

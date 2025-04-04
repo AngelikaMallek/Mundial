@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import supabase from "./ApiKey";
+import { supabase } from "./ApiKey";
 
-export const useApi = () => {
+export const useApiToSelectCountrys = () => {
 
 	const [teams, setTeams] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-
-
 
 	useEffect(() => {   
         const fetchTeams = async () => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import supabase from "./ApiKey";
+import { supabase } from "./ApiKey";
 
 export const useApiToMatch = () => {
 

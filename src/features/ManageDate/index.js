@@ -1,4 +1,4 @@
-import { useApi } from '../../API/useAPI';
+import { useApiToSelectCountrys } from '../../API/useApiToSelectCountrys';
 import { Section, SectionColumn } from '../../common/Container';
 import Loading from '../../common/Loading';
 import Error from '../../common/Error';
@@ -7,7 +7,7 @@ import { FixedComponentUpdated, useUpdateClick } from "./FixedComponents/useUpda
 import { FixedComponentDeleted, useDeleteClick } from "./FixedComponents/useDeleteClick";
 
 const ManageDate = () => {
-    const { teams, loading, error } = useApi();
+    const { teams, loading, error } = useApiToSelectCountrys();
 
     const { 
         showConfirm,

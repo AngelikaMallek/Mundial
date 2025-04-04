@@ -1,13 +1,13 @@
-import supabase from '../../../API/ApiKey';
+import { supabase } from '../../../API/ApiKey';
 import { useState } from "react";
-import { useApi } from "../../../API/useAPI";
+import { useApiToSelectCountrys } from "../../../API/useApiToSelectCountrys";
 
 export const useUpdatedItem = () => {
 
     const [newCountry, setNewCountry] = useState('');
     const [newCountryId, setNewCountryId] = useState('');
     const [validationError, setValidationError] = useState('');
-    const { teams } = useApi();
+    const { teams } = useApiToSelectCountrys();
 
     const handleUpdatedSubmit = async (e) => {
         e.preventDefault();
