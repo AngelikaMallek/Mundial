@@ -5,7 +5,6 @@ import { useApi } from "../../API/useAPI";
 export const useTeamForm = () => {
 
     const [team, setTeam] = useState('');
-    const [points, setPoints] = useState('');
     const [country, setCountry] = useState('');
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -30,7 +29,7 @@ export const useTeamForm = () => {
 
         setSuccess(false);
 
-        if (!team || !points || !country || validationCountryName === "") {
+        if (!team || !country || validationCountryName === "") {
             setValidationError('Wszystkie pola muszą być wypełnione!');
             return;
         }
@@ -50,18 +49,12 @@ export const useTeamForm = () => {
             return;
         }
 
-        if (points < 0) {
-            setValidationError('Punkty nie mogą być ujemne!');
-            return;
-        }
-
         setValidationError('');
 
         const { data, error } = await supabase
             .from('teams')
             .insert([{
                 team: team.toUpperCase(),
-                points: parseInt(points),
                 country: validationCountryName.charAt(0).toUpperCase() + validationCountryName.slice(1),
             },
             ]);
@@ -70,7 +63,6 @@ export const useTeamForm = () => {
             setError(true);
         } else {
             setTeam('');
-            setPoints('');
             setCountry('');
             setSuccess(true);
         }
@@ -79,8 +71,6 @@ export const useTeamForm = () => {
     return {
         team,
         setTeam,
-        points,
-        setPoints,
         country,
         setCountry,
         error,

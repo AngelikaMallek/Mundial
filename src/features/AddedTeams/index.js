@@ -8,8 +8,6 @@ const AddedTeams = () => {
     const {
         team,
         setTeam,
-        points,
-        setPoints,
         country,
         setCountry,
         error,
@@ -34,17 +32,6 @@ const AddedTeams = () => {
                         value={team}
                         onChange={(e) => setTeam(e.target.value)}
                         required
-                    />
-                </InputContainer>
-                <InputContainer>
-                    <FormLabel htmlFor="points">Punkty:</FormLabel>
-                    <FormInput
-                        type="number"
-                        id="points"
-                        value={points}
-                        onChange={(e) => setPoints(e.target.value)}
-                        required
-                        min={0}
                     />
                 </InputContainer>
                 <InputContainer>
