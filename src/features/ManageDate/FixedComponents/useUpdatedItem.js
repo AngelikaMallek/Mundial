@@ -12,7 +12,7 @@ export const useUpdatedItem = () => {
     const handleUpdatedSubmit = async (e) => {
         e.preventDefault();
 
-        const validationCountryName = newCountry.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, '').toLowerCase();
+        const validationCountryName = newCountry.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, ' ').toLowerCase();
         const teamExists = teams.some((existingTeam) => existingTeam.country.toLowerCase() === validationCountryName.toLowerCase());
 
         if (teamExists) {

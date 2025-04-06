@@ -5,6 +5,7 @@ import Error from '../../common/Error';
 import { Title, List, Caption, ListItem, ToggleButton, ListInternalItem } from "./styled"
 import { FixedComponentUpdated, useUpdateClick } from "./FixedComponents/useUpdateClick";
 import { FixedComponentDeleted, useDeleteClick } from "./FixedComponents/useDeleteClick";
+import { LinkCountry } from '../../common/TableStyle';
 
 const ManageDate = () => {
     const { teams, loading, error } = useApiToSelectCountrys();
@@ -61,7 +62,7 @@ const ManageDate = () => {
                                     .map((team) => {
                                         return (
                                             <ListItem key={team.country}>
-                                                {team.team === uniqueGrupa ? team.country : null}
+                                                <LinkCountry to={`/matches/${team.id}`}>{team.team === uniqueGrupa ? team.country : null}</LinkCountry>
                                                 <List>
                                                     <ListInternalItem>
                                                         <ToggleButton onClick={() => handleUpdatedClick(team.id,team.country)}>Edytuj</ToggleButton>

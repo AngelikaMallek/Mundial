@@ -1,7 +1,7 @@
 import { supabase } from '../../../API/ApiKey';
 import { useState } from "react";
 
-export const useUpdatedMatchSubmit = () => {
+export const useAddedMatchSubmit = () => {
 
     const [matchResultsCountry1, setMatchResultsCountry1] = useState('');
     const [matchResultsCountry2, setMatchResultsCountry2] = useState('');
@@ -14,7 +14,7 @@ export const useUpdatedMatchSubmit = () => {
         try {
             const { data, error } = await supabase
                 .from('results')
-                .update({country_1: countryId1, country_2: countryId2, points_1: matchResultsCountry1, points_2: matchResultsCountry2})
+                .insert({country_1: countryId1, country_2: countryId2, points_1: matchResultsCountry1, points_2: matchResultsCountry2})
 
                 window.location.reload();
             

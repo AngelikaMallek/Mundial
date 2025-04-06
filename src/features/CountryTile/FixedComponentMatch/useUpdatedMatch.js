@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { FixedWrapper, Form, FormInput, ToggleFixedButton, Parahraph, List, ListInternalItem, FormLabel, FormInputDisplay } from "../../../common/FixedComponents";
 import { useUpdatedMatchSubmit } from "./useUpdatedMatchSubmit";
 
-export const useUpdateMatch = () => {
+export const useUpdatedMatch = () => {
     const [showUpdatedConfirm, setShowUpdatedConfirm] = useState(false);
     const [ country_1, setCountry1 ] = useState(null);
     const [ country_2, setCountry2 ] = useState(null);

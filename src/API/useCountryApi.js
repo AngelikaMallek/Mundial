@@ -18,7 +18,7 @@ export const useCountryApi = (countryId) => {
             }
     }
 
-        setTimeout(fetchCountry, 500);
+        setTimeout(fetchCountry, 1);
     },[countryId]);
 
 	return { flags, loading, error };

@@ -7,9 +7,9 @@ const Navigation = () => (
                 <TitleText to="/">Mundial</TitleText>
             </LogoWrapper>
             <Links>
-                <LinkItem><LinkButton to="/teams">Teams</LinkButton></LinkItem>
-                <LinkItem><LinkButton to="/matches">Matches</LinkButton></LinkItem>
-                <LinkItem><LinkButton to="/manage">Manage</LinkButton></LinkItem>
+                <LinkItem><LinkButton to="/teams">Drużyny</LinkButton></LinkItem>
+                <LinkItem><LinkButton to="/matches">Mecze</LinkButton></LinkItem>
+                <LinkItem><LinkButton to="/manage">Zarządzanie</LinkButton></LinkItem>
             </Links>
         </StyledNavigation>
 )

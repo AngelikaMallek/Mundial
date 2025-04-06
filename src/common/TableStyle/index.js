@@ -30,6 +30,7 @@ export const TableTd = styled.td`
     padding: 5px;
     text-align: center;
     font-weight: 500;
+    min-width: 50px;
 `;
 
 export const LinkCountry = styled(Link)`
@@ -52,6 +53,7 @@ export const TableTdRight = styled.td`
     padding: 5px;
     text-align: center;
     font-weight: 500;
+    min-width: 50px;
 `;
 
 export const TableCaption = styled.caption`

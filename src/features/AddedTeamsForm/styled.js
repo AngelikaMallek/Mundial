@@ -83,5 +83,6 @@ export const FeetbackInform = styled.p`
     display: flex;
     justify-content: center;
     padding: 1px 10px;
+    text-align: center;
 `
 

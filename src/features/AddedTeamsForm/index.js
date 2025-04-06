@@ -25,7 +25,7 @@ const AddedTeams = () => {
             <Form onSubmit={handleSubmit}>
                 <Title>Dodaj swoją drużynę</Title>
                 <InputContainer>
-                    <FormLabel htmlFor="team">Nazwa drużyny:</FormLabel>
+                    <FormLabel htmlFor="team">Grupa:</FormLabel>
                     <FormInput
                         type="text"
                         id="team"

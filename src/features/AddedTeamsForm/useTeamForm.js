@@ -22,7 +22,7 @@ export const useTeamForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const validationCountryName = country.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, '').toLowerCase();
+        const validationCountryName = country.replace(/[^a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, ' ').toLowerCase();
         const teamExists = teams.some((existingTeam) => existingTeam.country.toLowerCase() === validationCountryName.toLowerCase());
         const count = teams.filter((countTeam) => countTeam.team.toLowerCase() === team.toLowerCase()).length;
         const isLetter = (str) => /^[a-zA-Z]$/.test(str);

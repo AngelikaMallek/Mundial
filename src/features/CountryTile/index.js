@@ -7,7 +7,7 @@ import { Title, ToggleButton, Image, Wrapper } from './styled';
 import { Table, TableCaption, TableTd, TableTr, ToggleLink } from '../../common/TableStyle';
 import { useCountryApi } from "../../API/useCountryApi";
 import { useApiToMatch } from '../../API/useAPIToMatch';
-import { useUpdateMatch, FixedComponentUpdatedMatch } from "./FixedComponentMatch/useUpdateMatch"
+import { useAddedMatch, FixedComponentUpdatedMatch } from "./FixedComponentMatch/useAddedMatch"
 
 const CountryTile = () => {
     const { id } = useParams();
@@ -26,7 +26,7 @@ const CountryTile = () => {
         country_2,
         countryId_1,
         countryId_2,
-    } = useUpdateMatch();
+    } = useAddedMatch();
 
     if (loading || !teams || !matchResults) {
         return <Loading />;
@@ -90,6 +90,9 @@ const CountryTile = () => {
                                     ):(
                                         <ToggleButton onClick={() => handleUpdatedClick(selectedTeam.country, team.country, selectedTeam.id, team.id)}>Dodaj wynik</ToggleButton>
                                     )}
+                                </TableTd>
+                                <TableTd>
+                                    <ToggleButton>Edytuj wynik</ToggleButton>
                                 </TableTd>
                             </TableTr>
                         );
