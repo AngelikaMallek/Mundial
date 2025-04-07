@@ -15,6 +15,8 @@ export const useUpdatedMatchSubmit = () => {
             const { data, error } = await supabase
                 .from('results')
                 .update({country_1: countryId1, country_2: countryId2, points_1: matchResultsCountry1, points_2: matchResultsCountry2})
+                .eq('country_1', countryId1)
+                .eq('country_2', countryId2)
 
                 window.location.reload();
             

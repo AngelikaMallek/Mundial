@@ -7,7 +7,8 @@ import { Title, ToggleButton, Image, Wrapper } from './styled';
 import { Table, TableCaption, TableTd, TableTr, ToggleLink } from '../../common/TableStyle';
 import { useCountryApi } from "../../API/useCountryApi";
 import { useApiToMatch } from '../../API/useAPIToMatch';
-import { useAddedMatch, FixedComponentUpdatedMatch } from "./FixedComponentMatch/useAddedMatch"
+import { useAddedMatch, FixedComponentAddedMatch } from "./FixedComponentMatch/useAddedMatch"
+import { useUpdatedMatch, FixedComponentUpdatedMatch } from './FixedComponentMatch/useUpdatedMatch';
 
 const CountryTile = () => {
     const { id } = useParams();
@@ -19,14 +20,24 @@ const CountryTile = () => {
     const { matchResults } = useApiToMatch();
 
     const { 
-        handleUpdatedClick, 
-        showUpdatedConfirm, 
-        setShowUpdatedConfirm, 
-        country_1, 
+        handleAddedClick, 
+        showAddedConfirm, 
+        setShowAddedConfirm, 
+        addedCountry_1, 
+        addedCountry_2,
+        addedCountryId_1,
+        addedCountryId_2,
+    } = useAddedMatch();
+
+    const { 
+        handleUpdatedClick,
+        showUpdatedConfirm,
+        setShowUpdatedConfirm,
+        country_1,
         country_2,
         countryId_1,
         countryId_2,
-    } = useAddedMatch();
+    } = useUpdatedMatch();
 
     if (loading || !teams || !matchResults) {
         return <Loading />;
@@ -41,6 +52,15 @@ const CountryTile = () => {
 
     return (
         <SectionCountryTile>
+            {showAddedConfirm && (
+                <FixedComponentAddedMatch 
+                    name1={addedCountry_1}
+                    name2={addedCountry_2}
+                    setShowAddedConfirm={setShowAddedConfirm}
+                    id1={addedCountryId_1}
+                    id2={addedCountryId_2}
+                />
+            )}
             {showUpdatedConfirm && (
                 <FixedComponentUpdatedMatch 
                     name1={country_1}
@@ -88,11 +108,11 @@ const CountryTile = () => {
                                     matchTwo ? (
                                         <span>{matchTwo.points_2} - {matchTwo.points_1}</span>
                                     ):(
-                                        <ToggleButton onClick={() => handleUpdatedClick(selectedTeam.country, team.country, selectedTeam.id, team.id)}>Dodaj wynik</ToggleButton>
+                                        <ToggleButton onClick={() => handleAddedClick(selectedTeam.country, team.country, selectedTeam.id, team.id)}>Dodaj wynik</ToggleButton>
                                     )}
                                 </TableTd>
                                 <TableTd>
-                                    <ToggleButton>Edytuj wynik</ToggleButton>
+                                    <ToggleButton onClick={() => handleUpdatedClick(selectedTeam.country, team.country, selectedTeam.id, team.id)}>Edytuj wynik</ToggleButton>
                                 </TableTd>
                             </TableTr>
                         );

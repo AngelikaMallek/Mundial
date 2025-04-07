@@ -3,18 +3,18 @@ import { useState } from "react";
 
 export const useAddedMatchSubmit = () => {
 
-    const [matchResultsCountry1, setMatchResultsCountry1] = useState('');
-    const [matchResultsCountry2, setMatchResultsCountry2] = useState('');
-    const [countryId1, setCountryId1] = useState('');
-    const [countryId2, setCountryId2] = useState('');
+    const [addedMatchResultsCountry1, setAddedMatchResultsCountry1] = useState('');
+    const [addedMatchResultsCountry2, setAddedMatchResultsCountry2] = useState('');
+    const [addedCountryId1, setAddedCountryId1] = useState('');
+    const [addedCountryId2, setAddedCountryId2] = useState('');
 
-    const handleMatchResultUpdatedSubmit = async (e) => {
+    const handleMatchResultAddedSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const { data, error } = await supabase
                 .from('results')
-                .insert({country_1: countryId1, country_2: countryId2, points_1: matchResultsCountry1, points_2: matchResultsCountry2})
+                .insert({country_1: addedCountryId1, country_2: addedCountryId2, points_1: addedMatchResultsCountry1, points_2: addedMatchResultsCountry2})
 
                 window.location.reload();
             
@@ -27,14 +27,14 @@ export const useAddedMatchSubmit = () => {
     }
 
     return{ 
-        countryId1, 
-        countryId2,
-        setCountryId1, 
-        setCountryId2, 
-        matchResultsCountry1, 
-        matchResultsCountry2, 
-        setMatchResultsCountry1, 
-        setMatchResultsCountry2, 
-        handleMatchResultUpdatedSubmit,
+        addedCountryId1, 
+        addedCountryId2,
+        setAddedCountryId1, 
+        setAddedCountryId2, 
+        addedMatchResultsCountry1, 
+        addedMatchResultsCountry2, 
+        setAddedMatchResultsCountry1, 
+        setAddedMatchResultsCountry2, 
+        handleMatchResultAddedSubmit,
     }
 }
