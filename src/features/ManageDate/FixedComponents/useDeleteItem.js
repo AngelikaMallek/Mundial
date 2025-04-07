@@ -7,6 +7,7 @@ export const deleteItem = async (itemId) => {
             .from('teams')
             .delete()
             .eq('id', itemId);
+            
             window.location.reload();
 
             if (error) throw error;

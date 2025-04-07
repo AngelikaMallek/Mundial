@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Table = styled.table`
-    padding: 15px;
+    padding-bottom: 15px;
     background-color: ${( { theme }) => theme.color.darkSeaGreen };
     border-radius: 0 0 10px 10px;
     min-width: 200px;
