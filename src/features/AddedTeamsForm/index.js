@@ -1,7 +1,8 @@
 import Error from "../../common/Error";
 import { Section } from "../../common/Container";
-import { Title, Form, FormLabel, FormInput, InputContainer, FeetbackInform, ToggleFormButton } from './styled';
+import { Title, Form, FormLabel, FormInput, InputContainer, FeetbackInform, ToggleFormButton, FormSelect, FormOption } from './styled';
 import { useTeamForm } from './useTeamForm';
+import { useCountryApi } from "../../API/useCountryApi";
 
 const AddedTeams = () => {
 
@@ -15,6 +16,8 @@ const AddedTeams = () => {
         handleSubmit,
         validationError
     } = useTeamForm();
+
+    const { flags } = useCountryApi();
 
     if (error) {
         return <Error />
@@ -36,13 +39,21 @@ const AddedTeams = () => {
                 </InputContainer>
                 <InputContainer>
                     <FormLabel htmlFor="country">Kraj:</FormLabel>
-                    <FormInput
+                    <FormSelect
                         type="text"
                         id="country"
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
                         required
-                    />
+                    >
+                        <FormOption></FormOption>
+                        {flags?.map((flag) => {
+                                return (
+                                    <FormOption>{flag.translations.pol.common}</FormOption>
+                                )
+                            })             
+                        }
+                    </FormSelect>
                 </InputContainer>
                 <ToggleFormButton type="submit">Dodaj drużynę</ToggleFormButton>
                 <FeetbackInform>{success ? "Gratulacje! Drużyna została dodana!" : validationError}</FeetbackInform>

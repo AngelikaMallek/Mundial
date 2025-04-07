@@ -44,6 +44,19 @@ export const FormInput = styled.input`
     border-bottom: 2px solid ${({ theme}) => theme.color.darkSeaGreen};
     box-shadow: 2px 2px 5px hsl(0, 0%, 50%);
     padding: 5px;
+    max-width: 170px;
+`;
+
+export const FormSelect = styled.select`
+    background-color: ${({ theme}) => theme.color.liteSeaGreen};
+    border: none;
+    border-bottom: 2px solid ${({ theme}) => theme.color.darkSeaGreen};
+    box-shadow: 2px 2px 5px hsl(0, 0%, 50%);
+    padding: 5px;
+    max-width: 170px;
+`;
+
+export const FormOption = styled.option`
 `;
 
 export const FormButton = styled.button`
@@ -73,6 +86,7 @@ export const InputContainer = styled.section`
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         flex-direction: column;
+        align-items: center;
     }
 `;
 
