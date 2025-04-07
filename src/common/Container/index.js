@@ -21,7 +21,7 @@ export const Section = styled.section`
     padding: 24px 24px 5px 24px;
     display: grid;
     gap: 24px;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
  
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         padding: 5px;
