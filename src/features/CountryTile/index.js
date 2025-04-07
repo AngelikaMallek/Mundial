@@ -33,10 +33,10 @@ const CountryTile = () => {
         handleUpdatedClick,
         showUpdatedConfirm,
         setShowUpdatedConfirm,
-        country_1,
-        country_2,
-        countryId_1,
-        countryId_2,
+        updatedCountry_1,
+        updatedCountry_2,
+        updatedCountryId_1,
+        updatedCountryId_2,
     } = useUpdatedMatch();
 
     if (loading || !teams || !matchResults) {
@@ -63,11 +63,11 @@ const CountryTile = () => {
             )}
             {showUpdatedConfirm && (
                 <FixedComponentUpdatedMatch 
-                    name1={country_1}
-                    name2={country_2}
+                    name1={updatedCountry_1}
+                    name2={updatedCountry_2}
                     setShowUpdatedConfirm={setShowUpdatedConfirm}
-                    id1={countryId_1}
-                    id2={countryId_2}
+                    id1={updatedCountryId_1}
+                    id2={updatedCountryId_2}
                 />
             )}
             <Title>{mainCountry.country}</Title>
