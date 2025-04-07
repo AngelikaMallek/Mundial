@@ -46,13 +46,14 @@ const AddedTeams = () => {
                         onChange={(e) => setCountry(e.target.value)}
                         required
                     >
-                        <FormOption></FormOption>
-                        {flags?.map((flag) => {
-                                return (
-                                    <FormOption>{flag.translations.pol.common}</FormOption>
-                                )
-                            })             
-                        }
+                    <FormOption></FormOption>
+                        {flags?.sort((a, b) => {
+                            return a.translations.pol.common.localeCompare(b.translations.pol.common);
+                        }).map((flag) => {
+                            return (
+                                <FormOption key={flag.id}>{flag.translations.pol.common}</FormOption>
+                        );
+                        })}
                     </FormSelect>
                 </InputContainer>
                 <ToggleFormButton type="submit">Dodaj drużynę</ToggleFormButton>
