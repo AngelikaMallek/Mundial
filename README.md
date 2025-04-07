@@ -2,7 +2,7 @@
 
 ## Demo
 
-![Animation](/src/images/Animation.gif)
+![Animation](/src/images/ReadmeAnimation.gif)
 You can visit my website here: [Mundial](https://angelikamallek.github.io/Mundial/)
 
 ## Description
