@@ -71,18 +71,21 @@ const CountryTile = () => {
                 />
             )}
             <Title>{mainCountry.country}</Title>
-                {flags
-                    .filter(flag => flag.translations.pol.common === selectedTeam.country)
-                    .map((flag) => {
-                        return (
-                            <Wrapper>
-                                <Image src={flag.flags.png} alt={flag.flags.alt}></Image>
-                                <Image src={flag.coatOfArms.png} alt="coatOfArms"></Image>
-                            </Wrapper>
-                        )
-                    })
-                        
-                }
+                {flags ? 
+                    Object.entries(flags)
+                    .sort(([, countryA], [, countryB]) => countryA.localeCompare(countryB))
+                    .filter(([countryCode, countryName]) => countryName === selectedTeam.country)
+                    .map(([countryCode, countryName], index) => (
+                        <Wrapper key={index}>
+                            <Image
+                                src={`https://flagcdn.com/w320/${countryCode}.png`}
+                                alt={countryName}
+                            />
+                        </Wrapper>
+                    )) 
+                : null}
+
+
             <Table key={mainCountry.id}>
             <TableCaption>Mecze: {mainCountry.country}</TableCaption>
                 {teams

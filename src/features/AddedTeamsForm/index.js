@@ -47,13 +47,12 @@ const AddedTeams = () => {
                         required
                     >
                     <FormOption></FormOption>
-                        {flags?.sort((a, b) => {
-                            return a.translations.pol.common.localeCompare(b.translations.pol.common);
-                        }).map((flag) => {
-                            return (
-                                <FormOption key={flag.id}>{flag.translations.pol.common}</FormOption>
-                        );
-                        })}
+                        {flags ? Object.values(flags)
+                            .sort((a, b) => a.localeCompare(b))  // sortowanie alfabetyczne
+                            .map((country, index) => (
+                                <FormOption key={index}>{country}</FormOption>
+                            )) : null
+                        }
                     </FormSelect>
                 </InputContainer>
                 <ToggleFormButton type="submit">Dodaj drużynę</ToggleFormButton>

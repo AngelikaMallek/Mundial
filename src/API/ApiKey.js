@@ -5,4 +5,4 @@ import { createClient } from '@supabase/supabase-js'
     
     export const supabase = createClient(supabaseUrl, supabaseKey)
 
-    export const countryApiUrl = "https://restcountries.com/v3.1/all"
+    export const countryApiUrl = "https://flagcdn.com/pl/codes.json"

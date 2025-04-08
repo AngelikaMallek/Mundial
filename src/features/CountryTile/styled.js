@@ -6,7 +6,7 @@ export const Title = styled.h1`
 `
 
 export const Image = styled.img`
-    width: 150px;
+    width: 250px;
 `
 
 export const Wrapper = styled.div`

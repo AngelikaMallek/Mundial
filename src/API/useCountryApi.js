@@ -11,7 +11,7 @@ export const useCountryApi = (countryId) => {
         const fetchCountry = async () => {
             try {
                 const response = await axios.get(countryApiUrl)
-                setFlags(response.data)
+                setFlags(response.data);
                 setLoadnig(false)
             } catch {
                 setError(true)
