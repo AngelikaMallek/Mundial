@@ -15,6 +15,7 @@ export const useCountryApi = (countryId) => {
                 setLoadnig(false)
             } catch {
                 setError(true)
+                setLoadnig(false)
             }
     }
 

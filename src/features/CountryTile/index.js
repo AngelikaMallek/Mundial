@@ -13,9 +13,9 @@ import { useUpdatedMatch, FixedComponentUpdatedMatch } from './FixedComponentMat
 const CountryTile = () => {
     const { id } = useParams();
     const countryId = Number(id);
-    const { flags, loading, error } = useCountryApi(countryId);
+    const { flags } = useCountryApi(countryId);
 
-    const { teams } = useApiToSelectCountrys();
+    const { teams, loading, error  } = useApiToSelectCountrys();
 
     const { matchResults } = useApiToMatch();
 
