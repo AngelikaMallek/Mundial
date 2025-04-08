@@ -2,8 +2,9 @@
 
 ## Demo
 
-![Animation](/src/images/ReadmeAnimation.gif)
 You can visit my website here: [Mundial](https://angelikamallek.github.io/Mundial/)
+
+![Animation](/src/images/AnimationToReadme.gif)
 
 ## Description
 
