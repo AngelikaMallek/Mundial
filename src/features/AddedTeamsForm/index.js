@@ -39,21 +39,32 @@ const AddedTeams = () => {
                 </InputContainer>
                 <InputContainer>
                     <FormLabel htmlFor="country">Kraj:</FormLabel>
-                    <FormSelect
-                        type="text"
-                        id="country"
-                        value={country}
-                        onChange={(e) => setCountry(e.target.value)}
-                        required
-                    >
-                    <FormOption></FormOption>
-                        {flags ? Object.values(flags)
-                            .sort((a, b) => a.localeCompare(b))  // sortowanie alfabetyczne
-                            .map((country, index) => (
-                                <FormOption key={index}>{country}</FormOption>
-                            )) : null
-                        }
-                    </FormSelect>
+                    {flags ? (
+                        <FormSelect
+                            type="text"
+                            id="country"
+                            value={country}
+                            onChange={(e) => setCountry(e.target.value)}
+                            required
+                        >
+                            <FormOption></FormOption>
+                            {Object.values(flags)
+                                .sort((a, b) => a.localeCompare(b))  // sortowanie alfabetyczne
+                                .map((country, index) => (
+                                    <FormOption key={index}>{country}</FormOption>
+                                ))
+                            }
+                        </FormSelect>
+                    ) : (
+                        <FormInput
+                            type="text"
+                            id="country"
+                            value={country}
+                            onChange={(e) => setCountry(e.target.value)}
+                            required
+                        />
+                    )}
+                    
                 </InputContainer>
                 <ToggleFormButton type="submit">Dodaj drużynę</ToggleFormButton>
                 <FeetbackInform>{success ? "Gratulacje! Drużyna została dodana!" : validationError}</FeetbackInform>
