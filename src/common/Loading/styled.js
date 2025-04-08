@@ -14,6 +14,8 @@ export const StyledLoading = styled.div`
     border: 12px solid ${({ theme }) => theme.color.snuff};
     border-right: 12px solid ${({ theme }) => theme.color.darkSeaGreen};
     animation: ${rotation} 3s linear infinite;
+    justify-self: center; /* Wyśrodkowuje element w poziomie */
+    align-self: center;
 
     @media(max-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 50px;
