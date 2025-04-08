@@ -19,6 +19,10 @@ The project was created for the purpose of practicing API development.
 - API
 - Supabase
 
+## API
+
+The used flags and country names come from the API: [API](https://www.flagi-panstw.pl/pobierz/api)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
